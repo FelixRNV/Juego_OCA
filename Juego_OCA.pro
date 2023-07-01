@@ -9,13 +9,16 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    inicio.cpp \
     main.cpp \
     juego_oca.cpp
 
 HEADERS += \
+    inicio.h \
     juego_oca.h
 
 FORMS += \
+    inicio.ui \
     juego_oca.ui
 
 # Default rules for deployment.
