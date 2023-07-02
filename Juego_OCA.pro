@@ -11,15 +11,33 @@ CONFIG += c++11
 SOURCES += \
     inicio.cpp \
     main.cpp \
-    juego_oca.cpp
+    juego_oca.cpp \
+    newjuego.cpp \
+    newtematica.cpp \
+    puntajes.cpp \
+    selecjugadores.cpp \
+    tematicas.cpp \
+    tipodejuego.cpp
 
 HEADERS += \
     inicio.h \
-    juego_oca.h
+    juego_oca.h \
+    newjuego.h \
+    newtematica.h \
+    puntajes.h \
+    selecjugadores.h \
+    tematicas.h \
+    tipodejuego.h
 
 FORMS += \
     inicio.ui \
-    juego_oca.ui
+    juego_oca.ui \
+    newjuego.ui \
+    newtematica.ui \
+    puntajes.ui \
+    selecjugadores.ui \
+    tematicas.ui \
+    tipodejuego.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
