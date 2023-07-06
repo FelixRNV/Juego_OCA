@@ -15,8 +15,18 @@ public:
     explicit Puntajes(QWidget *parent = nullptr);
     ~Puntajes();
 
+
+
+private slots:
+
+
+
 private:
     Ui::Puntajes *ui;
-};
 
+    enum Columna{
+          NOMBRE, PUNTUACION, CORRECTAS, INCORRECTAS
+
+    };
+};
 #endif // PUNTAJES_H
