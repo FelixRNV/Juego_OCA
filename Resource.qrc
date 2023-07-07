@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Resources/vintage_paper_background_2708.jpg</file>
+    </qresource>
+</RCC>
