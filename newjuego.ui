@@ -6,50 +6,104 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>234</width>
+    <width>498</width>
     <height>251</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QPushButton" name="btn_Reglas">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>200</y>
+     <width>189</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Configurar Jugadores</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_AcercaDe">
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>10</y>
-     <width>191</width>
-     <height>231</height>
+     <y>200</y>
+     <width>189</width>
+     <height>25</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="btn_NuevoJuego">
+   <property name="text">
+    <string>Salir</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>60</y>
+     <width>431</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
       <property name="text">
-       <string>Nuevo Juego</string>
+       <string>Jugadores</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QPushButton" name="btn_Tematicas">
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_2">
       <property name="text">
-       <string>Tematicas</string>
+       <string>Dificultad</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QPushButton" name="btn_Reglas">
+    <item row="0" column="1">
+     <widget class="QComboBox" name="comboBox"/>
+    </item>
+    <item row="4" column="1">
+     <widget class="QComboBox" name="comboBox_2"/>
+    </item>
+    <item row="1" column="1">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_3">
       <property name="text">
-       <string>Reglas</string>
+       <string>Temáticas</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QPushButton" name="btn_AcercaDe">
-      <property name="text">
-       <string>Acerca de...</string>
+    <item row="2" column="1">
+     <widget class="QComboBox" name="comboBox_3"/>
+    </item>
+    <item row="3" column="1">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
-     </widget>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
     </item>
    </layout>
   </widget>

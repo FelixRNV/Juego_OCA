@@ -16,8 +16,7 @@ SOURCES += \
     newtematica.cpp \
     puntajes.cpp \
     selecjugadores.cpp \
-    tematicas.cpp \
-    tipodejuego.cpp
+    tematicas.cpp
 
 HEADERS += \
     inicio.h \
@@ -26,8 +25,7 @@ HEADERS += \
     newtematica.h \
     puntajes.h \
     selecjugadores.h \
-    tematicas.h \
-    tipodejuego.h
+    tematicas.h
 
 FORMS += \
     inicio.ui \
@@ -36,8 +34,7 @@ FORMS += \
     newtematica.ui \
     puntajes.ui \
     selecjugadores.ui \
-    tematicas.ui \
-    tipodejuego.ui
+    tematicas.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
