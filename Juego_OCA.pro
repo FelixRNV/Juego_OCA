@@ -9,25 +9,30 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    agregar.cpp \
     inicio.cpp \
     main.cpp \
     juego_oca.cpp \
     newjuego.cpp \
     newtematica.cpp \
+    preguntas.cpp \
     puntajes.cpp \
     selecjugadores.cpp \
     tematicas.cpp
 
 HEADERS += \
+    agregar.h \
     inicio.h \
     juego_oca.h \
     newjuego.h \
     newtematica.h \
+    preguntas.h \
     puntajes.h \
     selecjugadores.h \
     tematicas.h
 
 FORMS += \
+    agregar.ui \
     inicio.ui \
     juego_oca.ui \
     newjuego.ui \
