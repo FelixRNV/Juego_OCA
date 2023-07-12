@@ -1,4 +1,3 @@
-
 #include "puntajes.h"
 #include "ui_puntajes.h"
 Puntajes::Puntajes(QWidget *parent)
