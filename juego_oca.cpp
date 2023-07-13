@@ -15,3 +15,13 @@ Juego_OCA::~Juego_OCA()
     delete ui;
 }
 
+
+void Juego_OCA::on_action_Nuevo_triggered()
+{
+    NewJuego ne(this);
+    int res = ne.exec();
+    if (res== QDialog::Rejected)
+        return;
+
+}
+

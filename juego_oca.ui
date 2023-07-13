@@ -1256,25 +1256,40 @@ border-left-color: rgb(192, 191, 188);</string>
      <bold>true</bold>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
   </action>
   <action name="action_Tem_ticas">
    <property name="text">
     <string>&amp;Temáticas</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
    </property>
   </action>
   <action name="action_Salir">
    <property name="text">
     <string>&amp;Salir</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="action_Reglas">
    <property name="text">
     <string>&amp;Reglas</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
   </action>
   <action name="actionA_cerca_de">
    <property name="text">
     <string>A&amp;cerca de..</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
    </property>
   </action>
  </widget>
