@@ -7,6 +7,7 @@ SelecJugadores::SelecJugadores(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SelecJugadores)
 {
+    // Initialize the QLineEdits
     ui->setupUi(this);
     setWindowTitle("Configurar Partida");
 
@@ -86,20 +87,5 @@ void SelecJugadores::on_ltx_jugador4_textChanged(const QString &arg1)
     if (arg1.length() > 10) {
         QMessageBox::critical(this, "Error", "¡Has ingresado más de 10 caracteres!");
     }
-}
-QLineEdit* SelecJugadores::getLineEdit3() const {
-    return ui->ltx_jugador3;
-}
-
-QLineEdit* SelecJugadores::getLineEdit4() const {
-    return ui->ltx_jugador4;
-}
-
-QComboBox* SelecJugadores::getComboBox3() const {
-    return ui->cbx_jugador3;
-}
-
-QComboBox* SelecJugadores::getComboBox4() const {
-    return ui->cbx_jugador4;
 }
 

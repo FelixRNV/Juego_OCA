@@ -31,7 +31,14 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ltx_jugador4"/>
+     <widget class="QLineEdit" name="ltx_jugador4">
+      <property name="tabletTracking">
+       <bool>true</bool>
+      </property>
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="label_9">
@@ -131,7 +138,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="ltx_jugador3"/>
+     <widget class="QLineEdit" name="ltx_jugador3">
+      <property name="readOnly">
+       <bool>false</bool>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="label_8">

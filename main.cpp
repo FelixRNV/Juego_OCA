@@ -1,11 +1,12 @@
-#include "juego_oca.h"
-
 #include <QApplication>
+#include "inicio.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Juego_OCA w;
-    w.show();
+    Inicio inicio;
+   inicio.show();
+
+
     return a.exec();
 }
