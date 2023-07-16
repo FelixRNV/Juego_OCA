@@ -15,7 +15,7 @@ NewTematica::NewTematica(QWidget *parent)
     ui->tblLista->setHorizontalHeaderLabels(titulo);
 
     // Ajustar el ancho de la columna de preguntas
-    ui->tblLista->setColumnWidth(PREGUNTAS, 700); // Ajusta el ancho en píxeles
+    ui->tblLista->setColumnWidth(PREGUNTAS, 450); // Ajusta el ancho en píxeles
 
     // Leer desde el archivo
     cargarPreguntas();
@@ -86,31 +86,10 @@ void NewTematica::cargarPreguntas(const QString& filePath)
 
 
 
-void NewTematica::on_btn_Ingresar_clicked()
-{
-    // Crear y mostrar el dialogo
-    Agregar pd(this);
-    pd.setWindowTitle("Agregar Preguntas");
-    // Abrir la ventana y evaluar respuesta
-    int res = pd.exec();
-    if (res == QDialog::Rejected){
-        return;
-    }
-    // Recuperar el objeto del cuadro de dialogo
-    Preguntas *p = pd.preguntas();
-    //Agregar a la tabla
-    int fila = ui->tblLista->rowCount();
-    ui->tblLista->insertRow(fila);
-
-    ui->tblLista->setItem(fila, PREGUNTAS, new QTableWidgetItem(p->pregunta()));
-    ui->tblLista->setItem(fila, RESPUESTAS, new QTableWidgetItem(p->respuesta()));
-}
-
-
 void NewTematica::on_btn_CargaPreguntas_clicked()
 {
     // Mostrar el diálogo para seleccionar un archivo de texto o CSV
-    QString filePath = QFileDialog::getOpenFileName(this, "Seleccionar archivo", QString(), "Archivos de texto (*.txt *.csv)");
+    QString filePath = QFileDialog::getOpenFileName(this, "Seleccionar archivo", QString(), "Archivos de texto (*.txt *.csv )");
 
     // Verificar si se seleccionó un archivo
     if (!filePath.isEmpty()) {
@@ -118,6 +97,8 @@ void NewTematica::on_btn_CargaPreguntas_clicked()
         QMessageBox::information(this, "Cargar archivo", "Archivo cargado exitosamente.");
     }
 }
+
+
 
 
 void NewTematica::on_btn_Guardar_clicked()
@@ -141,11 +122,11 @@ void NewTematica::on_btn_Guardar_clicked()
     // Agregar la extensión .bin al nombre del archivo
     QString binFilePath = fileName + ".bin";
 
-    // Obtener la ruta de la carpeta donde se encuentra el programa
-    QString programaPath = QCoreApplication::applicationDirPath();
+    // Obtener la ruta de la carpeta de la aplicación
+    QString folderPath = QCoreApplication::applicationDirPath();
 
-    // Construir la ruta completa del archivo binario
-    QString selectedFilePath = programaPath + "/" + binFilePath;
+    // Combinar la ruta de la carpeta y el nombre del archivo
+    QString selectedFilePath = folderPath + "/" + binFilePath;
 
     // Abrir el archivo binario en modo escritura
     QFile archivo(selectedFilePath);
@@ -167,16 +148,89 @@ void NewTematica::on_btn_Guardar_clicked()
         QMessageBox::information(this, "Guardar archivo", "Preguntas guardadas exitosamente en el archivo binario.");
     } else {
         QMessageBox::critical(this, "Guardar archivo", "No se puede escribir en el archivo binario.");
+        return;
     }
+
+
+    close();
 }
 
 
+void NewTematica::on_btn_Ingresar_clicked()
+{
+    // Crear y mostrar el dialogo
+    Agregar pd(this);
+    pd.setWindowTitle("Agregar Preguntas");
+    // Abrir la ventana y evaluar respuesta
+    int res = pd.exec();
+    if (res == QDialog::Rejected){
+        return;
+    }
+    // Recuperar el objeto del cuadro de dialogo
+    Preguntas *p = pd.preguntas();
+    //Agregar a la tabla
+    int fila = ui->tblLista->rowCount();
+    ui->tblLista->insertRow(fila);
+
+    ui->tblLista->setItem(fila, PREGUNTAS, new QTableWidgetItem(p->pregunta()));
+    ui->tblLista->setItem(fila, RESPUESTAS, new QTableWidgetItem(p->respuesta()));
+}
 
 
+void NewTematica::on_btn_Editar_clicked()
+{
+    int filaSeleccionada = ui->tblLista->currentRow();
+
+    if (filaSeleccionada < 0) {
+        return;
+    }
+
+    // Obtener los datos de la fila seleccionada
+    QTableWidgetItem *preguntaItem = ui->tblLista->item(filaSeleccionada, PREGUNTAS);
+    QTableWidgetItem *respuestaItem = ui->tblLista->item(filaSeleccionada, RESPUESTAS);
+
+    // Verificar si se seleccionó una fila válida
+    if (preguntaItem && respuestaItem) {
+        // Obtener los textos actuales de la pregunta y respuesta
+        QString preguntaActual = preguntaItem->text();
+        QString respuestaActual = respuestaItem->text();
+
+        // Crear y mostrar el cuadro de diálogo para editar la pregunta y respuesta
+        Agregar pd(this);
+        pd.setWindowTitle("Editar Pregunta");
+        pd.setPregunta(preguntaActual);
+        pd.setRespuesta(respuestaActual);
+
+        int res = pd.exec();
+        if (res == QDialog::Rejected) {
+            return;
+        }
+
+        // Obtener los nuevos valores de pregunta y respuesta desde el cuadro de diálogo
+        QString nuevaPregunta = pd.getPregunta();
+        QString nuevaRespuesta = pd.getRespuesta();
+
+        // Actualizar los datos en la tabla
+        preguntaItem->setText(nuevaPregunta);
+        respuestaItem->setText(nuevaRespuesta);
+
+        QMessageBox::information(this, "Editar Pregunta", "Pregunta editada exitosamente.");
+    }
+}
+
+void NewTematica::on_btn_Eliminar_clicked()
+{
+    int filaSeleccionada = ui->tblLista->currentRow();
+
+    if (filaSeleccionada < 0) {
+        return;
+    }
+
+    ui->tblLista->removeRow(filaSeleccionada);
+}
 
 
-
-void NewTematica::on_btn_Salir_clicked()
+void NewTematica::on_btn_Cerrar_clicked()
 {
     close();
 }

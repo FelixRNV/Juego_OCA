@@ -3,11 +3,6 @@
         <file>Resources/vintage_paper_background_2708.jpg</file>
         <file>Resources/textura-carton-amarillo.jpg</file>
         <file>Resources/juegooca.jpg</file>
-        <file>Resources/Mosaico-romano-de-pato.png</file>
-        <file>Resources/pato amarillo.jpeg</file>
-        <file>Resources/pato blanco.jpeg</file>
-        <file>Resources/pato casco.png</file>
-        <file>Resources/pato pinta.jpeg</file>
     </qresource>
     <qresource prefix="/tablero">
         <file>Resources/tablero partes/juegooca (0_0).jpg</file>

@@ -24,15 +24,19 @@ public:
 private slots:
 
 
-    void on_btn_Ingresar_clicked();
+
 
     void on_btn_CargaPreguntas_clicked();
 
     void on_btn_Guardar_clicked();
 
+    void on_btn_Ingresar_clicked();
 
+    void on_btn_Editar_clicked();
 
-    void on_btn_Salir_clicked();
+    void on_btn_Eliminar_clicked();
+
+    void on_btn_Cerrar_clicked();
 
 private:
     Ui::NewTematica *ui;

@@ -19,6 +19,13 @@ public:
     ~Agregar();
     Preguntas *preguntas()const;
 
+    void setPregunta(const QString& pregunta);
+    void setRespuesta(const QString& respuesta);
+
+    QString getPregunta() const;
+    QString getRespuesta() const;
+
+
 private slots:
     void on_buttonBox_2_accepted();
 

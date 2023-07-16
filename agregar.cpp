@@ -17,6 +17,30 @@ Agregar::~Agregar()
     delete ui;
 }
 
+void Agregar::setPregunta(const QString& pregunta)
+{
+    ui->inPregunta->setText(pregunta);
+}
+
+void Agregar::setRespuesta(const QString& respuesta)
+{
+    int index = ui->comboBoxRespuesta->findText(respuesta);
+    if (index != -1) {
+        ui->comboBoxRespuesta->setCurrentIndex(index);
+    }
+}
+
+QString Agregar::getPregunta() const
+{
+    return ui->inPregunta->text();
+}
+
+QString Agregar::getRespuesta() const
+{
+    return ui->comboBoxRespuesta->currentText();
+}
+
+
 Preguntas *Agregar::preguntas() const
 {
     return m_pregunta;
