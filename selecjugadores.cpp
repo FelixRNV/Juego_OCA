@@ -16,32 +16,24 @@ SelecJugadores::SelecJugadores(QWidget *parent) :
     ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 2");
     ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 3");
     ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 4");
-    ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 5");
-    ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 6");
 
     // Agregar opciones al QComboBox del jugador 2
     ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 1");
     ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 2");
     ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 3");
     ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 4");
-    ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 5");
-    ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 6");
 
     // Agregar opciones al QComboBox del jugador 3
     ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 1");
     ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 2");
     ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 3");
     ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 4");
-    ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 5");
-    ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 6");
 
     // Agregar opciones al QComboBox del jugador 4
     ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 1");
     ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 2");
     ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 3");
     ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 4");
-    ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 5");
-    ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 6");
 }
 
 SelecJugadores::~SelecJugadores()
@@ -88,4 +80,69 @@ void SelecJugadores::on_ltx_jugador4_textChanged(const QString &arg1)
         QMessageBox::critical(this, "Error", "¡Has ingresado más de 10 caracteres!");
     }
 }
+
+int SelecJugadores::indi() const
+{
+    return m_indi;
+}
+
+const Jugadores &SelecJugadores::p1() const
+{
+    return m_p1;
+}
+
+const Jugadores &SelecJugadores::p2() const
+{
+    return m_p2;
+}
+
+const Jugadores &SelecJugadores::p3() const
+{
+    return m_p3;
+}
+
+const Jugadores &SelecJugadores::p4() const
+{
+    return m_p4;
+}
+
+void SelecJugadores::setIndi(int newIndi)
+{
+    m_indi = newIndi;
+
+    //Se determinan los jugadores disponibles
+    switch (m_indi){
+    case 0:
+        ui->cbx_jugador1->setEnabled(true);
+        ui->cbx_jugador2->setEnabled(true);
+        ui->ltx_jugador1->setEnabled(true);
+        ui->ltx_jugador2->setEnabled(true);
+        ui->cbx_jugador3->setEnabled(false);
+        ui->cbx_jugador4->setEnabled(false);
+        ui->ltx_jugador3->setEnabled(false);
+        ui->ltx_jugador4->setEnabled(false);
+        break;
+    case 1:
+        ui->cbx_jugador1->setEnabled(true);
+        ui->cbx_jugador2->setEnabled(true);
+        ui->ltx_jugador1->setEnabled(true);
+        ui->ltx_jugador2->setEnabled(true);
+        ui->cbx_jugador3->setEnabled(true);
+        ui->cbx_jugador4->setEnabled(false);
+        ui->ltx_jugador3->setEnabled(true);
+        ui->ltx_jugador4->setEnabled(false);
+        break;
+    case 2:
+        ui->cbx_jugador1->setEnabled(true);
+        ui->cbx_jugador2->setEnabled(true);
+        ui->ltx_jugador1->setEnabled(true);
+        ui->ltx_jugador2->setEnabled(true);
+        ui->cbx_jugador3->setEnabled(true);
+        ui->cbx_jugador4->setEnabled(true);
+        ui->ltx_jugador3->setEnabled(true);
+        ui->ltx_jugador4->setEnabled(true);
+        break;
+    }
+}
+
 

@@ -24,32 +24,38 @@ NewJuego::~NewJuego()
 void NewJuego::on_btn_Reglas_clicked()
 {
     close();
-    SelecJugadores *ventana = new SelecJugadores();
-    ventana->show();
+    jug.exec();
+
+
 }
 void NewJuego::on_btn_Salir_clicked()
 {
     close();
 }
-const Jugadores &NewJuego::p1() const
+
+
+void NewJuego::on_cbx_jugadores_currentIndexChanged(int index)
+{
+    jug.setIndi(index);
+}
+
+Jugadores *NewJuego::p1() const
 {
     return m_p1;
 }
 
-const Jugadores &NewJuego::p2() const
+Jugadores *NewJuego::p2() const
 {
     return m_p2;
 }
 
-const Jugadores &NewJuego::p3() const
+Jugadores *NewJuego::p3() const
 {
     return m_p3;
 }
 
-const Jugadores &NewJuego::p4() const
+Jugadores *NewJuego::p4() const
 {
     return m_p4;
 }
-
-
 

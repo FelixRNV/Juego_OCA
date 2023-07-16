@@ -3,6 +3,9 @@
 #include "QLineEdit"
 #include <QDialog>
 #include "QComboBox"
+#include "jugadores.h"
+#include "QDebug"
+
 namespace Ui {
 class SelecJugadores;
 }
@@ -15,6 +18,14 @@ public:
     explicit SelecJugadores(QWidget *parent = nullptr);
     ~SelecJugadores();
 
+    void setIndi(int newIndi);
+
+    const Jugadores &p1() const;
+    const Jugadores &p2() const;
+    const Jugadores &p3() const;
+    const Jugadores &p4() const;
+
+    int indi() const;
 
 private slots:
     void on_btnBox_rejected();
@@ -32,7 +43,11 @@ private slots:
 
 private:
     Ui::SelecJugadores *ui;
-
+    int m_indi;
+    Jugadores m_p1;
+    Jugadores m_p2;
+    Jugadores m_p3;
+    Jugadores m_p4;
 };
 
 #endif // SELECJUGADORES_H
