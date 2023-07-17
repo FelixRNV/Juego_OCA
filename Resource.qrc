@@ -95,4 +95,5 @@
         <file>Resources/fichas/ficha_3.png</file>
         <file>Resources/fichas/ficha_4.png</file>
     </qresource>
+    <qresource prefix="/Resources/Temas"/>
 </RCC>
