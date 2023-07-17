@@ -25,3 +25,12 @@ void Juego_OCA::on_action_Nuevo_triggered()
 
 }
 
+
+void Juego_OCA::on_action_Tem_ticas_triggered()
+{
+    NewTematica te(this);
+    int res = te.exec();
+    if (res== QDialog::Rejected)
+        return;
+}
+

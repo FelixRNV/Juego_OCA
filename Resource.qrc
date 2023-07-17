@@ -3,6 +3,8 @@
         <file>Resources/vintage_paper_background_2708.jpg</file>
         <file>Resources/textura-carton-amarillo.jpg</file>
         <file>Resources/juegooca.jpg</file>
+        <file>Resources/BaseIndex.txt</file>
+        <file>Resources/logo.png</file>
     </qresource>
     <qresource prefix="/tablero">
         <file>Resources/tablero partes/juegooca (0_0).jpg</file>
@@ -86,5 +88,11 @@
         <file>Resources/tablero partes/juegooca (8_6).jpg</file>
         <file>Resources/tablero partes/juegooca (8_7).jpg</file>
         <file>Resources/tablero partes/juegooca (8_8).jpg</file>
+    </qresource>
+    <qresource prefix="/fichas">
+        <file>Resources/fichas/ficha_1.png</file>
+        <file>Resources/fichas/ficha_2.png</file>
+        <file>Resources/fichas/ficha_3.png</file>
+        <file>Resources/fichas/ficha_4.png</file>
     </qresource>
 </RCC>

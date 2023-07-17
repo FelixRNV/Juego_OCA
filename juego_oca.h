@@ -22,6 +22,8 @@ public:
 private slots:
     void on_action_Nuevo_triggered();
 
+    void on_action_Tem_ticas_triggered();
+
 private:
     Ui::Juego_OCA *ui;
 };
