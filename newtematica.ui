@@ -129,13 +129,7 @@
       </widget>
      </item>
      <item row="2" column="2">
-      <widget class="QComboBox" name="cbx_Temas">
-       <item>
-        <property name="text">
-         <string>&lt;Seleccionar&gt;</string>
-        </property>
-       </item>
-      </widget>
+      <widget class="QComboBox" name="cbx_Temas"/>
      </item>
     </layout>
    </item>

@@ -18,7 +18,7 @@ NewTematica::NewTematica(QWidget *parent)
         ui->cbx_Temas->addItem(line);
     }
     ind.close();
-
+    ui->cbx_Temas->addItem("Añadir Tema...");
     // Configurar la tabla
     ui->tblLista->setColumnCount(2);
     QStringList titulo;
@@ -250,9 +250,10 @@ void NewTematica::on_btn_Cerrar_clicked()
 
 void NewTematica::on_cbx_Temas_currentTextChanged(const QString &arg1)
 {
-    QString path;
-    if (arg1=="Matematicas")
-        path = arg1 + ".bin";
+    ui->ltxNombreTematica->setEnabled(false);
+    if (arg1=="Añadir Tema...")
+        ui->ltxNombreTematica->setEnabled(true);
+    path = arg1 + ".oca";
     qDebug() << path;
     qDebug() << arg1;
 }
