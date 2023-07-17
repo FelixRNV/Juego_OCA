@@ -8,6 +8,17 @@ NewTematica::NewTematica(QWidget *parent)
     ui->setupUi(this);
     setWindowTitle("Formulario de Preguntas");
 
+    //Cargar ComboBox de temas
+    QFile ind(BASE);
+    if(!ind.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+    QTextStream indix(&ind);
+    while (!indix.atEnd()) {
+        QString line = indix.readLine();
+        ui->cbx_Temas->addItem(line);
+    }
+    ind.close();
+
     // Configurar la tabla
     ui->tblLista->setColumnCount(2);
     QStringList titulo;
@@ -35,7 +46,7 @@ void NewTematica::cargarPreguntas()
         return;
 
     // cargar datos
-    if (archivo.open(QFile::ReadOnly)) {
+    if (archivo.open(QFile::ReadOnly | QIODevice::Text)) {
         QTextStream entrada(&archivo);
         int fila;
         while(!entrada.atEnd()){
@@ -120,7 +131,7 @@ void NewTematica::on_btn_Guardar_clicked()
     }
 
     // Agregar la extensión .bin al nombre del archivo
-    QString binFilePath = fileName + ".bin";
+    QString binFilePath = fileName + ".oca";
 
     // Obtener la ruta de la carpeta de la aplicación
     QString folderPath = QCoreApplication::applicationDirPath();
@@ -243,5 +254,6 @@ void NewTematica::on_cbx_Temas_currentTextChanged(const QString &arg1)
     if (arg1=="Matematicas")
         path = arg1 + ".bin";
     qDebug() << path;
+    qDebug() << arg1;
 }
 

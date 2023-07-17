@@ -43,6 +43,8 @@ private slots:
 
 private:
     Ui::NewTematica *ui;
+    QString path;
+    const QString BASE = ":/Resources/BaseIndex.txt";
     const QString ARCHIVO = ":/TMatematicas.txt";
     enum Columna
     {
