@@ -1,0 +1,45 @@
+    ¿La Programación Orientada a Objetos (POO) es un paradigma de programación?; V
+    ¿La POO se basa en el concepto de objetos y clases?; V
+    ¿Los objetos son instancias de una clase?; V
+    ¿La herencia es un concepto importante en la POO?; V
+    ¿La encapsulación es un principio clave en la POO?; V
+    ¿La polimorfismo es una característica de la POO?; V
+    ¿La abstracción es un elemento fundamental en la POO?; V
+    ¿La modularidad se logra mediante el uso de clases en la POO?; V
+    ¿Los atributos representan las características de un objeto en la POO?; V
+    ¿Los métodos definen el comportamiento de un objeto en la POO?; V
+    ¿La reutilización de código es un beneficio de la POO?; V
+    ¿La POO permite el desarrollo de aplicaciones más escalables y mantenibles?; V
+    ¿El principio de herencia permite la creación de jerarquías de clases?; V
+    ¿El principio de encapsulación protege los datos de una clase?; V
+    ¿El principio de polimorfismo permite el uso de una interfaz común para diferentes objetos?; V
+    ¿El principio de abstracción permite enfocarse en los aspectos esenciales de un objeto?; V
+    ¿Las clases pueden heredar propiedades y métodos de una clase base?; V
+    ¿La sobrecarga de métodos permite definir varios métodos con el mismo nombre pero diferentes parámetros?; V
+    ¿Los constructores son métodos especiales que se utilizan para inicializar objetos?; V
+    ¿Los objetos pueden comunicarse entre sí a través de mensajes?; V
+    ¿El polimorfismo permite tratar objetos de diferentes clases de manera uniforme?; V
+    ¿La herencia múltiple permite que una clase herede de varias clases?; F
+    ¿La interfaz de una clase define un contrato que otras clases pueden implementar?; V
+    ¿La composición es una relación en la que un objeto contiene a otros objetos?; V
+    ¿La clase abstracta puede tener métodos implementados y métodos abstractos?; V
+    ¿La herencia simple es una característica de la POO?; V
+    ¿La sobrescritura de métodos permite redefinir un método en una clase derivada?; V
+    ¿La encapsulación evita el acceso directo a los datos de un objeto?; V
+    ¿La clase es una plantilla para crear objetos?; V
+    ¿Los objetos pueden tener estado y comportamiento?; V
+    ¿La polimorfismo permite la creación de código genérico y flexible?; V
+    ¿La POO facilita la reutilización de código a través de la herencia y la composición?; V
+    ¿La modularidad permite dividir un programa en partes más pequeñas y manejables?; V
+    ¿La POO promueve la organización y estructuración del código?; V
+    ¿El principio de ocultamiento de información asegura que solo los métodos relevantes sean accesibles desde fuera de la clase?; V
+    ¿La clase base es aquella de la cual se heredan otras clases?; V
+    ¿Los objetos pueden interactuar entre sí a través de mensajes y métodos?; V
+    ¿La clase derivada hereda los miembros de la clase base?; V
+    ¿La clase es una abstracción de un concepto o entidad del mundo real?; V
+    ¿El polimorfismo permite tratar objetos de diferentes clases como si fueran del mismo tipo?; V
+    ¿La sobrecarga de operadores permite definir el comportamiento de operadores en clases personalizadas?; V
+    ¿La agregación es una relación en la que un objeto puede existir independientemente de otro objeto?; V
+    ¿La herencia es una forma de compartir comportamiento y atributos entre clases relacionadas?; V
+    ¿La clase abstracta no puede ser instanciada directamente?; V
+    ¿La POO facilita la modularidad, la reutilización y el mantenimiento del código?; V
