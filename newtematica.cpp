@@ -41,23 +41,20 @@ NewTematica::~NewTematica()
 void NewTematica::cargarPreguntas()
 {
     // Verificar si el archivo existe
-    QFile archivo(ARCHIVO);
+    QFile archivo(path);
     if (!archivo.exists())
         return;
 
     // cargar datos
-    if (archivo.open(QFile::ReadOnly | QIODevice::Text)) {
-        QTextStream entrada(&archivo);
-        int fila;
-        while(!entrada.atEnd()){
-            QString linea = entrada.readLine();
-            QStringList datos = linea.split(";");
-            //Agregar a la tabla
-            fila = ui->tblLista->rowCount();
-            ui->tblLista->insertRow(fila);
-            ui->tblLista->setItem(fila, PREGUNTAS, new QTableWidgetItem(datos[PREGUNTAS]));
-            ui->tblLista->setItem(fila, RESPUESTAS, new QTableWidgetItem(datos[RESPUESTAS]));
-        }
+    if (archivo.open(QFile::ReadOnly )) {
+        QDataStream entrada(&archivo);
+        //int fila;
+        QString datos[2];
+        for(int i=0;ui->tblLista->rowCount();i++){
+        entrada << datos[0] << datos[1];
+        ui->tblLista->setItem(i, PREGUNTAS, new QTableWidgetItem(datos[PREGUNTAS]));
+        ui->tblLista->setItem(i, RESPUESTAS, new QTableWidgetItem(datos[RESPUESTAS]));
+    }
         archivo.close();
     }
 }
@@ -126,41 +123,51 @@ void NewTematica::on_btn_Guardar_clicked()
 
     // Verificar que se haya ingresado un nombre de archivo válido
     if (fileName.isEmpty()) {
-        QMessageBox::warning(this, "Guardar archivo", "Debe ingresar un nombre de archivo válido");
+        QMessageBox::warning(this, "Guardar archivo", "Debe ingresar un nombre válido");
         return;
     }
 
     // Agregar la extensión .bin al nombre del archivo
     QString binFilePath = fileName + ".oca";
 
+    qDebug() << "Guardar en path: " << binFilePath;
     // Obtener la ruta de la carpeta de la aplicación
-    QString folderPath = QCoreApplication::applicationDirPath();
+    QString folderPath =  ""; //"/Resources/Temas";
 
     // Combinar la ruta de la carpeta y el nombre del archivo
-    QString selectedFilePath = folderPath + "/" + binFilePath;
+    QString selectedFilePath = folderPath + "" + binFilePath;
 
     // Abrir el archivo binario en modo escritura
-    QFile archivo(selectedFilePath);
-    if (archivo.open(QIODevice::WriteOnly)) {
-        QDataStream salida(&archivo);
+    QDir dir;
+    if (!dir.exists(folderPath)){
+        dir.mkpath(folderPath);
+    }
 
-        for (int i = 0; i < filas; i++) {
-            QTableWidgetItem *pregunta = ui->tblLista->item(i, PREGUNTAS);
-            QTableWidgetItem *respuesta = ui->tblLista->item(i, RESPUESTAS);
-
-            QString preguntaText = pregunta->text();
-            QString respuestaText = respuesta->text();
-
-            // Escribir los datos en el archivo binario
-            salida << preguntaText << respuestaText;
-        }
-
-        archivo.close();
-        QMessageBox::information(this, "Guardar archivo", "Preguntas guardadas exitosamente en el archivo binario.");
-    } else {
-        QMessageBox::critical(this, "Guardar archivo", "No se puede escribir en el archivo binario.");
+    QFile nue(selectedFilePath);
+    if (!nue.open(QIODevice::WriteOnly)) {
+        QMessageBox::critical(this, "Guardar archivo", "No se puede almacenar la temática");
         return;
     }
+
+    QDataStream salida(&nue);
+
+    for (int i = 0; i < filas; i++) {
+        QTableWidgetItem *pregunta = ui->tblLista->item(i, PREGUNTAS);
+        QTableWidgetItem *respuesta = ui->tblLista->item(i, RESPUESTAS);
+
+        QString preguntaText = pregunta->text();
+        QString respuestaText = respuesta->text();
+
+        // Escribir los datos en el archivo binario
+        salida << preguntaText << respuestaText;
+    }
+
+    nue.close();
+    QMessageBox::information(this, "Guardar archivo", "Preguntas guardadas exitosamente");
+
+
+    return;
+
 
 
     close();
@@ -251,9 +258,14 @@ void NewTematica::on_btn_Cerrar_clicked()
 void NewTematica::on_cbx_Temas_currentTextChanged(const QString &arg1)
 {
     ui->ltxNombreTematica->setEnabled(false);
-    if (arg1=="Añadir Tema...")
+    if (arg1=="Añadir Tema..."){
         ui->ltxNombreTematica->setEnabled(true);
-    path = arg1 + ".oca";
+        return;
+    }
+    if (arg1=="<Seleccionar>")
+        return;
+    path = ":/"+arg1 + ".oca";
+    cargarPreguntas();
     qDebug() << path;
     qDebug() << arg1;
 }

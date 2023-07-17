@@ -8,6 +8,8 @@
 #include "preguntas.h"
 #include "agregar.h"
 #include <QTextStream>
+#include <QDir>
+#include <QFile>
 #include "QDebug"
 
 QT_BEGIN_NAMESPACE

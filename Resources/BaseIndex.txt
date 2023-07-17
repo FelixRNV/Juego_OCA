@@ -1,1 +1,3 @@
 <Seleccionar>
+Ciencias Naturales
+Ciencias Sociales
