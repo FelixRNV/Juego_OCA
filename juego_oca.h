@@ -6,6 +6,8 @@
 #include <newtematica.h>
 #include <acercade.h>
 #include <jugadores.h>
+#include <QRandomGenerator>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Juego_OCA; }
@@ -24,8 +26,12 @@ private slots:
 
     void on_action_Tem_ticas_triggered();
 
+    void on_btnDado_released();
+
 private:
     Ui::Juego_OCA *ui;
+    QString m_tema;
+    int m_level;
     Jugadores *p1;
     Jugadores *p2;
     Jugadores *p3;

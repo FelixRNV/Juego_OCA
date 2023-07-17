@@ -93,8 +93,7 @@ void SelecJugadores::on_btnBox_accepted()
 
         break;
     }
-
-    close();
+    accept();
 
 }
 

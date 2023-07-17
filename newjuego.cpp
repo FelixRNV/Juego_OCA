@@ -34,8 +34,15 @@ NewJuego::~NewJuego()
 }
 void NewJuego::on_btn_Reglas_clicked()
 {
-    close();
-    jug.exec();
+
+    if(jug.exec()==QDialog::Accepted){
+        m_p1=new Jugadores(jug.p1());
+        m_p2=new Jugadores(jug.p2());
+        m_p3=new Jugadores(jug.p3());
+        m_p4=new Jugadores(jug.p4());
+        accept();
+    }
+
 
 
 }
@@ -75,5 +82,22 @@ void NewJuego::on_cbx_tematicas_currentIndexChanged(const QString &arg1)
 {
     if (arg1=="<Seleccionar>")
         return;
+    m_tema=arg1;
+}
+
+int NewJuego::level() const
+{
+    return m_level;
+}
+
+const QString &NewJuego::Tema() const
+{
+    return m_tema;
+}
+
+
+void NewJuego::on_cbx_dificultad_currentIndexChanged(int index)
+{
+    m_level=index;
 }
 

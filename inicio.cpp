@@ -10,7 +10,7 @@ Inicio::Inicio(QWidget *parent) :
     show();
     //oculta la barra superior de la ventana para que parezca una verdadera ventana de carga
     setWindowFlags(Qt::CustomizeWindowHint);
-    QTimer::singleShot(7000, this, SLOT(abrirJuegoOca())); // Establecer el temporizador para abrir Juego_OCA después de 7 segundos
+    QTimer::singleShot(4000, this, SLOT(abrirJuegoOca())); // Establecer el temporizador para abrir Juego_OCA después de 4 segundos
 
 }
 Inicio::~Inicio()

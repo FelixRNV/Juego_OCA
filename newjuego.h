@@ -25,6 +25,10 @@ public:
     Jugadores *p3() const;
     Jugadores *p4() const;
 
+    const QString &Tema() const;
+
+    int level() const;
+
 private slots:
     void on_btn_Reglas_clicked();
     void on_btn_Salir_clicked();
@@ -32,9 +36,13 @@ private slots:
 
     void on_cbx_tematicas_currentIndexChanged(const QString &arg1);
 
+    void on_cbx_dificultad_currentIndexChanged(int index);
+
 private:
     Ui::NewJuego *ui;
     SelecJugadores jug;
+    QString m_tema;
+    int m_level;
     const QString BASE = ":/Resources/BaseIndex.txt";
     Jugadores *m_p1=new Jugadores(jug.p1());
     Jugadores *m_p2=new Jugadores(jug.p2());
