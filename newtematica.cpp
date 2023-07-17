@@ -235,3 +235,13 @@ void NewTematica::on_btn_Cerrar_clicked()
     close();
 }
 
+
+
+void NewTematica::on_cbx_Temas_currentTextChanged(const QString &arg1)
+{
+    QString path;
+    if (arg1=="Matematicas")
+        path = arg1 + ".bin";
+    qDebug() << path;
+}
+

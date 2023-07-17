@@ -129,7 +129,33 @@
       </widget>
      </item>
      <item row="2" column="2">
-      <widget class="QComboBox" name="cbx_Temas"/>
+      <widget class="QComboBox" name="cbx_Temas">
+       <item>
+        <property name="text">
+         <string>Matematicas</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ciencias Sociales</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Ciencias Naturales</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Programación Orientada a Objetos</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Añadir Tema...</string>
+        </property>
+       </item>
+      </widget>
      </item>
     </layout>
    </item>

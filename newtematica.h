@@ -8,6 +8,7 @@
 #include "preguntas.h"
 #include "agregar.h"
 #include <QTextStream>
+#include "QDebug"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class NewTematica; }
@@ -37,6 +38,8 @@ private slots:
     void on_btn_Eliminar_clicked();
 
     void on_btn_Cerrar_clicked();
+
+    void on_cbx_Temas_currentTextChanged(const QString &arg1);
 
 private:
     Ui::NewTematica *ui;
