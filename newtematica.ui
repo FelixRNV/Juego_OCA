@@ -14,16 +14,70 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_6">
-   <item row="0" column="0">
-    <layout class="QGridLayout" name="gridLayout_3">
-     <item row="1" column="0">
-      <widget class="QLabel" name="label_2">
+   <item row="0" column="1">
+    <layout class="QGridLayout" name="gridLayout_5">
+     <item row="2" column="0">
+      <widget class="QPushButton" name="btn_Editar">
        <property name="text">
-        <string>Anadir Tematica:</string>
+        <string>Editar</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0" colspan="2">
+     <item row="0" column="0">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="4" column="0">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>268</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="3" column="0">
+      <widget class="QPushButton" name="btn_Eliminar">
+       <property name="text">
+        <string>Eliminar</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="btn_Ingresar">
+       <property name="text">
+        <string>Agregar</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QPushButton" name="btn_Cerrar">
+       <property name="text">
+        <string>Cerrar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="5" column="0" colspan="3">
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
         <spacer name="horizontalSpacer">
@@ -54,75 +108,28 @@
        </item>
       </layout>
      </item>
-     <item row="1" column="1">
-      <widget class="QLineEdit" name="ltxNombreTematica"/>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Anadir Tematica:</string>
+       </property>
+      </widget>
      </item>
-     <item row="2" column="0" colspan="2">
+     <item row="4" column="0" colspan="3">
       <widget class="QTableWidget" name="tblLista"/>
      </item>
-     <item row="0" column="0" colspan="2">
-      <widget class="QComboBox" name="comboBox"/>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="1">
-    <layout class="QGridLayout" name="gridLayout_5">
-     <item row="4" column="0">
-      <spacer name="verticalSpacer_2">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>268</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item row="3" column="0">
-      <widget class="QPushButton" name="btn_Eliminar">
-       <property name="text">
-        <string>Eliminar</string>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QPushButton" name="btn_Cerrar">
-       <property name="text">
-        <string>Cerrar</string>
-       </property>
-      </widget>
+     <item row="3" column="2">
+      <widget class="QLineEdit" name="ltxNombreTematica"/>
      </item>
      <item row="2" column="0">
-      <widget class="QPushButton" name="btn_Editar">
+      <widget class="QLabel" name="label">
        <property name="text">
-        <string>Editar</string>
+        <string>Temáticas</string>
        </property>
       </widget>
      </item>
-     <item row="1" column="0">
-      <widget class="QPushButton" name="btn_Ingresar">
-       <property name="text">
-        <string>Agregar</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0">
-      <spacer name="verticalSpacer">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Expanding</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
+     <item row="2" column="2">
+      <widget class="QComboBox" name="cbx_Temas"/>
      </item>
     </layout>
    </item>
