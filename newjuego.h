@@ -6,6 +6,7 @@
 #include "jugadores.h"
 #include "selecjugadores.h"
 #include "QDebug"
+#include "QFile"
 
 namespace Ui {
 class NewJuego;
@@ -29,9 +30,12 @@ private slots:
     void on_btn_Salir_clicked();
     void on_cbx_jugadores_currentIndexChanged(int index);
 
+    void on_cbx_tematicas_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::NewJuego *ui;
     SelecJugadores jug;
+    const QString BASE = ":/Resources/BaseIndex.txt";
     Jugadores *m_p1=new Jugadores(jug.p1());
     Jugadores *m_p2=new Jugadores(jug.p2());
     Jugadores *m_p3=new Jugadores(jug.p3());

@@ -48,9 +48,54 @@ void SelecJugadores::on_btnBox_rejected()
 
 void SelecJugadores::on_btnBox_accepted()
 {
+    QString name;
+    int av;
+    switch (m_indi){
+    case 0:
+        name=ui->ltx_jugador1->text();
+        av=ui->cbx_jugador1->currentIndex();
+        m_p1.setJuga(name,0,av);
+
+        name=ui->ltx_jugador2->text();
+        av=ui->cbx_jugador2->currentIndex();
+        m_p2.setJuga(name,0,av);
+        break;
+    case 1:
+        name=ui->ltx_jugador1->text();
+        av=ui->cbx_jugador1->currentIndex();
+        m_p1.setJuga(name,0,av);
+
+        name=ui->ltx_jugador2->text();
+        av=ui->cbx_jugador2->currentIndex();
+        m_p2.setJuga(name,0,av);
+
+        name=ui->ltx_jugador3->text();
+        av=ui->cbx_jugador3->currentIndex();
+        m_p3.setJuga(name,0,av);
+
+        break;
+    case 2:
+        name=ui->ltx_jugador1->text();
+        av=ui->cbx_jugador1->currentIndex();
+        m_p1.setJuga(name,0,av);
+
+        name=ui->ltx_jugador2->text();
+        av=ui->cbx_jugador2->currentIndex();
+        m_p2.setJuga(name,0,av);
+
+        name=ui->ltx_jugador3->text();
+        av=ui->cbx_jugador3->currentIndex();
+        m_p3.setJuga(name,0,av);
+
+        name=ui->ltx_jugador4->text();
+        av=ui->cbx_jugador4->currentIndex();
+        m_p4.setJuga(name,0,av);
+
+        break;
+    }
+
     close();
-    Juego_OCA *ventana = new Juego_OCA();
-    ventana->show();
+
 }
 
 void SelecJugadores::on_ltx_jugador1_textChanged(const QString &arg1)

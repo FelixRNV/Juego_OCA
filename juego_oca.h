@@ -26,5 +26,9 @@ private slots:
 
 private:
     Ui::Juego_OCA *ui;
+    Jugadores *p1;
+    Jugadores *p2;
+    Jugadores *p3;
+    Jugadores *p4;
 };
 #endif // JUEGO_OCA_H

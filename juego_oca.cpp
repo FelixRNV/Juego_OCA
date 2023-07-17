@@ -22,6 +22,10 @@ void Juego_OCA::on_action_Nuevo_triggered()
     int res = ne.exec();
     if (res== QDialog::Rejected)
         return;
+    p1=ne.p1();
+    p2=ne.p2();
+    p3=ne.p3();
+    p4=ne.p4();
 
 }
 
