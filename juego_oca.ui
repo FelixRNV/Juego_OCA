@@ -36,8 +36,8 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>9</x>
-      <y>-1</y>
+      <x>10</x>
+      <y>0</y>
       <width>1247</width>
       <height>901</height>
      </rect>
@@ -55,1092 +55,9 @@
      </size>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/Resources/textura-carton-amarillo.jpg);</string>
+     <string notr="true">QWidget#widget{
+border-image: url(:/Resources/tablero partes/Fondo_Princi.png);}</string>
     </property>
-    <widget class="QWidget" name="widget_2" native="true">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>140</y>
-       <width>711</width>
-       <height>691</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-image: url(:/Resources/textura-carton-amarillo.jpg);</string>
-     </property>
-     <widget class="QWidget" name="widCasIni" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_1" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_2" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_3" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_5" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_5).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_6" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_4" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_7" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_8" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>610</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (8_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_31" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>540</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_32" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>540</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_33" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>540</y>
-        <width>71</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_34" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>540</y>
-        <width>71</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_35" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>540</y>
-        <width>71</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_36" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>540</y>
-        <width>71</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_5).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_37" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>540</y>
-        <width>71</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_38" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>540</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_9" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>540</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (7_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_30" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>470</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_55" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>470</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_56" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>470</y>
-        <width>71</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_57" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>470</y>
-        <width>71</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_58" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>470</y>
-        <width>71</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_59" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>470</y>
-        <width>71</width>
-        <height>80</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_5).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_60" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>470</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_39" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>470</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_10" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>470</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (6_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_29" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_54" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_1" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_2" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_3" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_4" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_5).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_61" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_40" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_11" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>400</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (5_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_12" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_13" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_14" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_15" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_16" native="true">
-      <property name="geometry">
-       <rect>
-        <x>600</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_8).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_17" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_18" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_19" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_5).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_20" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_21" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_22" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_23" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_24" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>50</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (0_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_25" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_26" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_27" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_28" native="true">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_0).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_41" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_42" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_43" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_44" native="true">
-      <property name="geometry">
-       <rect>
-        <x>530</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_7).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_45" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_46" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_5).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_47" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_48" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_49" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_50" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>120</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (1_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_51" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_52" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_53" native="true">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_1).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_62" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_5" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_6" native="true">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_6).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_7" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_5).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_8" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_9" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_10" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>190</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (2_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_11" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_12" native="true">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_2).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_13" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_14" native="true">
-      <property name="geometry">
-       <rect>
-        <x>250</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_3).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_15" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_16" native="true">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_4).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widCas_63" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>260</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (3_5).jpg);</string>
-      </property>
-     </widget>
-     <widget class="QWidget" name="widBac_17" native="true">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>330</y>
-        <width>71</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-image: url(:/tablero/Resources/tablero partes/juegooca (4_5).jpg);</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>440</x>
-       <y>10</y>
-       <width>361</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>50</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Juego OCA</string>
-     </property>
-    </widget>
     <widget class="QWidget" name="formLayoutWidget">
      <property name="geometry">
       <rect>
@@ -1238,6 +155,683 @@ border-left-color: rgb(192, 191, 188);</string>
       </item>
      </layout>
     </widget>
+    <widget class="Casillero" name="widCasi_0" native="true">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>750</y>
+       <width>81</width>
+       <height>80</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_1" native="true">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>750</y>
+       <width>81</width>
+       <height>80</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>750</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_3" native="true">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>750</y>
+       <width>81</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_4" native="true">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>750</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_5" native="true">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>750</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_6" native="true">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>750</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_7" native="true">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>750</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_8" native="true">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>750</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_9" native="true">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_10" native="true">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_11" native="true">
+     <property name="geometry">
+      <rect>
+       <x>720</x>
+       <y>510</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_12" native="true">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>440</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_13" native="true">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>360</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_14" native="true">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>280</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_15" native="true">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>210</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_16" native="true">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_17" native="true">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_19" native="true">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_20" native="true">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_21" native="true">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_22" native="true">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_23" native="true">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_24" native="true">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_25" native="true">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>210</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_26" native="true">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>280</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_27" native="true">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>360</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_28" native="true">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>440</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_29" native="true">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>520</y>
+       <width>71</width>
+       <height>70</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_30" native="true">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_31" native="true">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_32" native="true">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_33" native="true">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_34" native="true">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_35" native="true">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_36" native="true">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_37" native="true">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_38" native="true">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>670</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_39" native="true">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_40" native="true">
+     <property name="geometry">
+      <rect>
+       <x>640</x>
+       <y>510</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_41" native="true">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>440</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_42" native="true">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>360</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_43" native="true">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>290</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_44" native="true">
+     <property name="geometry">
+      <rect>
+       <x>630</x>
+       <y>210</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_45" native="true">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>210</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_46" native="true">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>210</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_47" native="true">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>210</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_48" native="true">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>210</y>
+       <width>70</width>
+       <height>70</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_49" native="true">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>210</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_50" native="true">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>210</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_51" native="true">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>290</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_52" native="true">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>360</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_53" native="true">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>440</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_54" native="true">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>520</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_55" native="true">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_56" native="true">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_57" native="true">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_58" native="true">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_59" native="true">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_60" native="true">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>590</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_61" native="true">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>520</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_62" native="true">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>440</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_63" native="true">
+     <property name="geometry">
+      <rect>
+       <x>480</x>
+       <y>390</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="Casillero" name="widCasi_18" native="true">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>130</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>10</y>
+       <width>345</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="font">
+         <font>
+          <pointsize>50</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Juego OCA</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -1316,6 +910,14 @@ border-left-color: rgb(192, 191, 188);</string>
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Casillero</class>
+   <extends>QWidget</extends>
+   <header>casillero.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

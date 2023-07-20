@@ -11,6 +11,7 @@ CONFIG += c++11
 SOURCES += \
     acercade.cpp \
     agregar.cpp \
+    casillero.cpp \
     inicio.cpp \
     jugadores.cpp \
     main.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
 HEADERS += \
     acercade.h \
     agregar.h \
+    casillero.h \
     inicio.h \
     juego_oca.h \
     jugadores.h \
@@ -38,6 +40,7 @@ HEADERS += \
 FORMS += \
     acercade.ui \
     agregar.ui \
+    casillero.ui \
     inicio.ui \
     juego_oca.ui \
     newjuego.ui \
