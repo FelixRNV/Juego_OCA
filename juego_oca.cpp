@@ -1,6 +1,10 @@
 #include "juego_oca.h"
 #include "ui_juego_oca.h"
-
+#include "QTranslator"
+#include <QUrl>
+#include <QDesktopServices>
+#include "QDir"
+#include <QFile>
 Juego_OCA::Juego_OCA(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Juego_OCA)
@@ -14,7 +18,6 @@ Juego_OCA::~Juego_OCA()
 {
     delete ui;
 }
-
 
 void Juego_OCA::on_action_Nuevo_triggered()
 {
@@ -30,9 +33,7 @@ void Juego_OCA::on_action_Nuevo_triggered()
         qDebug() << p1->name();
     }
 
-
 }
-
 
 void Juego_OCA::on_action_Tem_ticas_triggered()
 {
@@ -41,8 +42,6 @@ void Juego_OCA::on_action_Tem_ticas_triggered()
     if (res== QDialog::Rejected)
         return;
 }
-
-
 
 void Juego_OCA::on_btnDado_released()
 {

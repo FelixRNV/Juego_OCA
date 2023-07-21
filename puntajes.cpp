@@ -1,5 +1,6 @@
 #include "puntajes.h"
 #include "ui_puntajes.h"
+#include "QTranslator"
 Puntajes::Puntajes(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Puntajes)

@@ -3,7 +3,7 @@
 #include "selecjugadores.h"
 #include "QComboBox"
 #include "ui_selecjugadores.h"
-
+#include "QTranslator"
 NewJuego::NewJuego(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::NewJuego)

@@ -28,6 +28,7 @@ private slots:
 
     void on_btnDado_released();
 
+
 private:
     Ui::Juego_OCA *ui;
     QString m_tema;

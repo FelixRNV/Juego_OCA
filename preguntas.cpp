@@ -1,5 +1,5 @@
 #include "preguntas.h"
-
+#include "QTranslator"
 Preguntas::Preguntas(QObject *parent)
     : QObject{parent}
 {

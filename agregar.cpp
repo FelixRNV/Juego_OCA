@@ -1,6 +1,6 @@
 #include "agregar.h"
 #include "ui_agregar.h"
-
+#include "QTranslator"
 Agregar::Agregar(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Agregar)

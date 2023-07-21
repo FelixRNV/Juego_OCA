@@ -2,6 +2,7 @@
 #define INICIO_H
 #include <QDialog>
 #include "juego_oca.h"
+#include "QProgressBar"
 namespace Ui {
 class Inicio;
 }
@@ -16,8 +17,8 @@ public:
 public slots:
     void abrirJuegoOca();
 private:
-
     Ui::Inicio *ui;
+    QProgressBar *barraCarga;
 };
 
 #endif // INICIO_H

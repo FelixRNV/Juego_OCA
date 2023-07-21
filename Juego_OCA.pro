@@ -48,7 +48,11 @@ FORMS += \
     puntajes.ui \
     selecjugadores.ui \
     tematicas.ui
-
+    TRANSLATIONS += \
+        Juego_OCA_es_EC.ts \
+         Juego_OCA_en_US.ts
+    CONFIG += lrelease
+    CONFIG += embed_translations
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

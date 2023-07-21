@@ -1,5 +1,5 @@
 #include "jugadores.h"
-
+#include "QTranslator"
 const QString &Jugadores::name() const
 {
     return m_name;

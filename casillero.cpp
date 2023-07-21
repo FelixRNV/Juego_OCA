@@ -1,6 +1,6 @@
 #include "casillero.h"
 #include "ui_casillero.h"
-
+#include "QTranslator"
 Casillero::Casillero(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Casillero)

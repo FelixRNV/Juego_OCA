@@ -2,7 +2,7 @@
 #include "ui_selecjugadores.h"
 #include "juego_oca.h"
 #include "QMessageBox"
-
+#include "QTranslator"
 SelecJugadores::SelecJugadores(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SelecJugadores)
