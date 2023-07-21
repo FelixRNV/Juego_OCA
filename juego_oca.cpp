@@ -1,10 +1,6 @@
 #include "juego_oca.h"
 #include "ui_juego_oca.h"
-#include "QTranslator"
-#include <QUrl>
-#include <QDesktopServices>
-#include "QDir"
-#include <QFile>
+
 Juego_OCA::Juego_OCA(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Juego_OCA)
@@ -18,6 +14,7 @@ Juego_OCA::~Juego_OCA()
 {
     delete ui;
 }
+
 
 void Juego_OCA::on_action_Nuevo_triggered()
 {
@@ -33,7 +30,9 @@ void Juego_OCA::on_action_Nuevo_triggered()
         qDebug() << p1->name();
     }
 
+
 }
+
 
 void Juego_OCA::on_action_Tem_ticas_triggered()
 {
@@ -43,11 +42,49 @@ void Juego_OCA::on_action_Tem_ticas_triggered()
         return;
 }
 
+
+
 void Juego_OCA::on_btnDado_released()
 {
     int dado;
 
     dado = QRandomGenerator::system()->bounded(1,6);
     QMessageBox::information(this, "Dado", "Avanza : "+ QString::number(dado) +" Casilleros");
+}
+
+
+void Juego_OCA::on_action_Reglas_triggered()
+{
+    // Cargar el archivo PDF desde el recurso de Qt
+    QFile pdfFile(ARCHIVO);
+
+    // Verificar si el archivo PDF se puede abrir correctamente
+    if (!pdfFile.open(QIODevice::ReadOnly))
+    {
+        qDebug() << "Error al abrir el archivo PDF.";
+        return;
+    }
+
+    // Obtener la ruta temporal para guardar el archivo
+    QString tempFilePath = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/reglamento_temp.pdf";
+
+    // Crear un archivo temporal para guardar el contenido del PDF
+    QFile tempFile(tempFilePath);
+    if (!tempFile.open(QIODevice::WriteOnly))
+    {
+        qDebug() << "Error al guardar el archivo PDF temporalmente.";
+        pdfFile.close();
+        return;
+    }
+
+    // Leer el contenido del PDF desde el recurso y escribirlo en el archivo temporal
+    tempFile.write(pdfFile.readAll());
+
+    // Cerrar ambos archivos
+    pdfFile.close();
+    tempFile.close();
+
+    // Abrir el archivo PDF usando el visor de PDF predeterminado del sistema
+    QDesktopServices::openUrl(QUrl::fromLocalFile(tempFilePath));
 }
 

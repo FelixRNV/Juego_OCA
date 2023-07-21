@@ -5,6 +5,7 @@
         <file>Resources/BaseIndex.txt</file>
         <file>Resources/logo.png</file>
         <file>Resources/tablero partes/Fondo_Princi.png</file>
+        <file>Resources/Reglamento_juego_OCA.pdf</file>
     </qresource>
     <qresource prefix="/fichas">
         <file>Resources/fichas/ficha_1.png</file>

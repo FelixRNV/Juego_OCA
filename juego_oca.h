@@ -7,7 +7,12 @@
 #include <acercade.h>
 #include <jugadores.h>
 #include <QRandomGenerator>
-
+#include <QMainWindow>
+#include <QFile>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QDir> // Agregamos esta línea para incluir QDir
+#include <QStandardPaths> // Agregamos esta línea para incluir QStandardPaths
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Juego_OCA; }
@@ -28,9 +33,11 @@ private slots:
 
     void on_btnDado_released();
 
+    void on_action_Reglas_triggered();
 
 private:
     Ui::Juego_OCA *ui;
+    const QString ARCHIVO = ":/Resources/Reglamento_juego_OCA.pdf";
     QString m_tema;
     int m_level;
     Jugadores *p1;
