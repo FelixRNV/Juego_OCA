@@ -35,6 +35,10 @@ private slots:
 
     void on_action_Reglas_triggered();
 
+    void on_actionA_cerca_de_triggered();
+
+    void on_action_Salir_triggered();
+
 private:
     Ui::Juego_OCA *ui;
     const QString ARCHIVO = ":/Resources/Reglamento_juego_OCA.pdf";

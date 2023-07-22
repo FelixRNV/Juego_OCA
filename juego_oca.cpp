@@ -88,3 +88,16 @@ void Juego_OCA::on_action_Reglas_triggered()
     QDesktopServices::openUrl(QUrl::fromLocalFile(tempFilePath));
 }
 
+
+void Juego_OCA::on_actionA_cerca_de_triggered()
+{
+    Acercade ventanaAcercaDe;
+    ventanaAcercaDe.exec();
+}
+
+
+void Juego_OCA::on_action_Salir_triggered()
+{
+    close();
+}
+

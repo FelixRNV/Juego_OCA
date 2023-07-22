@@ -12,28 +12,28 @@ SelecJugadores::SelecJugadores(QWidget *parent) :
     setWindowTitle("Configurar Partida");
 
     // Agregar opciones al QComboBox del jugador 1
-    ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 1");
-    ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 2");
-    ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 3");
-    ui->cbx_jugador1->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 4");
+    ui->cbx_jugador1->addItem(QIcon(":/fichas/Resources/fichas/ficha_1.png"), "Avatar 1");
+    ui->cbx_jugador1->addItem(QIcon(":/fichas/Resources/fichas/ficha_2.png"), "Avatar 2");
+    ui->cbx_jugador1->addItem(QIcon(":/fichas/Resources/fichas/ficha_3.png"),  "Avatar 3");
+    ui->cbx_jugador1->addItem(QIcon(":/fichas/Resources/fichas/ficha_4.png"), "Avatar 4");
 
     // Agregar opciones al QComboBox del jugador 2
-    ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 1");
-    ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 2");
-    ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 3");
-    ui->cbx_jugador2->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 4");
+    ui->cbx_jugador2->addItem(QIcon(":/fichas/Resources/fichas/ficha_1.png"), "Avatar 1");
+    ui->cbx_jugador2->addItem(QIcon(":/fichas/Resources/fichas/ficha_2.png"), "Avatar 2");
+    ui->cbx_jugador2->addItem(QIcon(":/fichas/Resources/fichas/ficha_3.png"),  "Avatar 3");
+    ui->cbx_jugador2->addItem(QIcon(":/fichas/Resources/fichas/ficha_4.png"), "Avatar 4");
 
     // Agregar opciones al QComboBox del jugador 3
-    ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 1");
-    ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 2");
-    ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 3");
-    ui->cbx_jugador3->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 4");
+    ui->cbx_jugador3->addItem(QIcon(":/fichas/Resources/fichas/ficha_1.png"), "Avatar 1");
+    ui->cbx_jugador3->addItem(QIcon(":/fichas/Resources/fichas/ficha_2.png"), "Avatar 2");
+    ui->cbx_jugador3->addItem(QIcon(":/fichas/Resources/fichas/ficha_3.png"),  "Avatar 3");
+    ui->cbx_jugador3->addItem(QIcon(":/fichas/Resources/fichas/ficha_4.png"), "Avatar 4");
 
     // Agregar opciones al QComboBox del jugador 4
-    ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 1");
-    ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 2");
-    ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"),  "Avatar 3");
-    ui->cbx_jugador4->addItem(QIcon(":/avatar/avantar1/iconos.png"), "Avatar 4");
+    ui->cbx_jugador4->addItem(QIcon(":/fichas/Resources/fichas/ficha_1.png"), "Avatar 1");
+    ui->cbx_jugador4->addItem(QIcon(":/fichas/Resources/fichas/ficha_2.png"), "Avatar 2");
+    ui->cbx_jugador4->addItem(QIcon(":/fichas/Resources/fichas/ficha_3.png"),  "Avatar 3");
+    ui->cbx_jugador4->addItem(QIcon(":/fichas/Resources/fichas/ficha_4.png"), "Avatar 4");
 }
 
 SelecJugadores::~SelecJugadores()
