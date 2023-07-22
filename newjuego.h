@@ -7,6 +7,7 @@
 #include "selecjugadores.h"
 #include "QDebug"
 #include "QFile"
+#include "QMessageBox"
 
 namespace Ui {
 class NewJuego;
@@ -30,7 +31,7 @@ public:
     int level() const;
 
 private slots:
-    void on_btn_Reglas_clicked();
+
     void on_btn_Salir_clicked();
     void on_cbx_jugadores_currentIndexChanged(int index);
 
@@ -38,11 +39,14 @@ private slots:
 
     void on_cbx_dificultad_currentIndexChanged(int index);
 
+    void on_btn_Seg_released();
+
 private:
     Ui::NewJuego *ui;
     SelecJugadores jug;
     QString m_tema;
     int m_level;
+    bool valid;
     const QString BASE = "Resources/BaseIndex.txt";
     Jugadores *m_p1=new Jugadores(jug.p1());
     Jugadores *m_p2=new Jugadores(jug.p2());

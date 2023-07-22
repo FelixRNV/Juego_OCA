@@ -26,7 +26,8 @@ NewTematica::NewTematica(QWidget *parent)
     ui->tblLista->setHorizontalHeaderLabels(titulo);
 
     // Ajustar el ancho de la columna de preguntas
-    ui->tblLista->setColumnWidth(PREGUNTAS, 450); // Ajusta el ancho en píxeles
+
+    ui->tblLista->setColumnWidth(PREGUNTAS, 746); // Ajusta el ancho en píxeles
 
     // Leer desde el archivo
     cargarPreguntas();
@@ -42,13 +43,12 @@ void NewTematica::cargarPreguntas()
 {
     // Verificar si el archivo existe
     QString filePath="Resources/Temas" + path;
-    qDebug() << filePath;
+
     // Verificar si el archivo existe
     QFile archivo(filePath);
-    if (!archivo.exists()) {
-        qDebug()<< "NOP";
+    if (!archivo.exists())
         return;
-    }
+
 
     // Limpiar la tabla existente
     ui->tblLista->clearContents();
@@ -77,7 +77,7 @@ void NewTematica::cargarPreguntas(const QString& filePath)
     // Verificar si el archivo existe
     QFile archivo(filePath);
     if (!archivo.exists()) {
-        QMessageBox::critical(this, "Cargar preguntas", "El archivo no existe.");
+        QMessageBox::critical(this, tr("Cargar preguntas"), tr("El archivo no existe."));
         return;
     }
 
@@ -101,7 +101,7 @@ void NewTematica::cargarPreguntas(const QString& filePath)
         }
         archivo.close();
     } else {
-        QMessageBox::critical(this, "Cargar preguntas", "No se pudo abrir el archivo.");
+        QMessageBox::critical(this, tr("Cargar preguntas"), tr("No se pudo abrir el archivo."));
     }
 }
 
@@ -110,12 +110,12 @@ void NewTematica::cargarPreguntas(const QString& filePath)
 void NewTematica::on_btn_CargaPreguntas_clicked()
 {
     // Mostrar el diálogo para seleccionar un archivo de texto o CSV
-    QString filePath = QFileDialog::getOpenFileName(this, "Seleccionar archivo", QString(), "Archivos de texto (*.txt *.csv )");
+    QString filePath = QFileDialog::getOpenFileName(this, tr("Seleccionar archivo"), QString(), tr("Archivos de texto (*.txt *.csv )"));
 
     // Verificar si se seleccionó un archivo
     if (!filePath.isEmpty()) {
         cargarPreguntas(filePath);
-        QMessageBox::information(this, "Cargar archivo", "Archivo cargado exitosamente.");
+        QMessageBox::information(this, tr("Cargar archivo"), tr("Archivo cargado exitosamente."));
     }
 }
 
@@ -127,7 +127,7 @@ void NewTematica::on_btn_Guardar_clicked()
     // Verificar que existan datos para guardar
     int filas = ui->tblLista->rowCount();
     if (filas == 0) {
-        QMessageBox::warning(this, "Guardar archivo", "No hay datos para guardar");
+        QMessageBox::warning(this, tr("Guardar archivo"), tr("No hay datos para guardar"));
         return;
     }
 
@@ -136,14 +136,14 @@ void NewTematica::on_btn_Guardar_clicked()
 
     // Verificar que se haya ingresado un nombre de archivo válido
     if (fileName.isEmpty()) {
-        QMessageBox::warning(this, "Guardar archivo", "Debe ingresar un nombre válido");
+        QMessageBox::warning(this, tr("Guardar archivo"), tr("Debe ingresar un nombre válido"));
         return;
     }
 
     // Agregar la extensión .bin al nombre del archivo
     QString binFilePath = fileName + ".oca";
 
-    qDebug() << "Guardar en path: " << binFilePath;
+
     // Obtener la ruta de la carpeta de la aplicación
     QString folderPath =  "Resources/Temas";
 
@@ -186,10 +186,10 @@ void NewTematica::on_btn_Guardar_clicked()
     //Cargar Nuevo tema
     ui->cbx_Temas->removeItem(ui->cbx_Temas->count()-1);
     ui->cbx_Temas->addItem(fileName);
-    ui->cbx_Temas->addItem("Añadir Tema...");
+    ui->cbx_Temas->addItem(tr("Añadir Tema..."));
     ui->ltxNombreTematica->clear();
 
-    QMessageBox::information(this, "Guardar archivo", "Preguntas guardadas exitosamente");
+    QMessageBox::information(this, tr("Guardar archivo"), tr("Preguntas guardadas exitosamente"));
 
 
     return;
@@ -204,7 +204,7 @@ void NewTematica::on_btn_Ingresar_clicked()
 {
     // Crear y mostrar el dialogo
     Agregar pd(this);
-    pd.setWindowTitle("Agregar Preguntas");
+    pd.setWindowTitle(tr("Agregar Preguntas"));
     // Abrir la ventana y evaluar respuesta
     int res = pd.exec();
     if (res == QDialog::Rejected){
@@ -241,7 +241,7 @@ void NewTematica::on_btn_Editar_clicked()
 
         // Crear y mostrar el cuadro de diálogo para editar la pregunta y respuesta
         Agregar pd(this);
-        pd.setWindowTitle("Editar Pregunta");
+        pd.setWindowTitle(tr("Editar Pregunta"));
         pd.setPregunta(preguntaActual);
         pd.setRespuesta(respuestaActual);
 
@@ -258,7 +258,7 @@ void NewTematica::on_btn_Editar_clicked()
         preguntaItem->setText(nuevaPregunta);
         respuestaItem->setText(nuevaRespuesta);
 
-        QMessageBox::information(this, "Editar Pregunta", "Pregunta editada exitosamente.");
+        QMessageBox::information(this, tr("Editar Pregunta"), tr("Pregunta editada exitosamente."));
     }
 }
 
@@ -301,7 +301,7 @@ void NewTematica::on_cbx_Temas_currentTextChanged(const QString &arg1)
 void NewTematica::on_btn_NewTopic_released()
 {
     ui->cbx_Temas->setCurrentIndex(ui->cbx_Temas->count()-1);
-    qDebug() << ui->cbx_Temas->count();
+
 
 }
 

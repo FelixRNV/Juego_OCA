@@ -111,7 +111,7 @@ border-image: url(:/Resources/tablero partes/Fondo_Princi.png);}</string>
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(205, 171, 143);</string>
+         <string notr="true"/>
         </property>
        </widget>
       </item>
@@ -795,7 +795,7 @@ border-left-color: rgb(192, 191, 188);</string>
       </rect>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>440</x>

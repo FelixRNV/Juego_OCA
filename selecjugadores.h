@@ -5,6 +5,7 @@
 #include "QComboBox"
 #include "jugadores.h"
 #include "QDebug"
+#include "QCloseEvent"
 
 namespace Ui {
 class SelecJugadores;
@@ -48,6 +49,9 @@ private:
     Jugadores m_p2;
     Jugadores m_p3;
     Jugadores m_p4;
+    bool condicion = false;
+    void validAV_Na();
+
 };
 
 #endif // SELECJUGADORES_H

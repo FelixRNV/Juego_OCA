@@ -26,26 +26,19 @@ NewJuego::NewJuego(QWidget *parent) :
         ui->cbx_tematicas->addItem(line);
     }
     ind.close();
+    if(ui->cbx_tematicas->count()==1){
+        QMessageBox::warning(this,"Error","Añadir Temáticas Primero");
+        valid=true;
+    }
+    if (valid==true)
+        close();
 }
 
 NewJuego::~NewJuego()
 {
     delete ui;
 }
-void NewJuego::on_btn_Reglas_clicked()
-{
 
-    if(jug.exec()==QDialog::Accepted){
-        m_p1=new Jugadores(jug.p1());
-        m_p2=new Jugadores(jug.p2());
-        m_p3=new Jugadores(jug.p3());
-        m_p4=new Jugadores(jug.p4());
-        accept();
-    }
-
-
-
-}
 void NewJuego::on_btn_Salir_clicked()
 {
     close();
@@ -80,8 +73,11 @@ Jugadores *NewJuego::p4() const
 
 void NewJuego::on_cbx_tematicas_currentIndexChanged(const QString &arg1)
 {
-    if (arg1=="<Seleccionar>")
+    if (arg1=="<Seleccionar>"){
+        valid=true;
         return;
+    }
+    valid=false;
     m_tema=arg1;
 }
 
@@ -99,5 +95,21 @@ const QString &NewJuego::Tema() const
 void NewJuego::on_cbx_dificultad_currentIndexChanged(int index)
 {
     m_level=index;
+}
+
+
+void NewJuego::on_btn_Seg_released()
+{
+    if (valid==true){
+        QMessageBox::warning(this,tr("Error"),tr("Debe seleccionar Temática"));
+        return;
+    }
+    if(jug.exec()==QDialog::Accepted){
+        m_p1=new Jugadores(jug.p1());
+        m_p2=new Jugadores(jug.p2());
+        m_p3=new Jugadores(jug.p3());
+        m_p4=new Jugadores(jug.p4());
+        accept();
+    }
 }
 
