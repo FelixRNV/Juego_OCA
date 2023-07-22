@@ -43,10 +43,12 @@ private slots:
 
     void on_cbx_Temas_currentTextChanged(const QString &arg1);
 
+    void on_btn_NewTopic_released();
+
 private:
     Ui::NewTematica *ui;
     QString path;
-    const QString BASE = ":/Resources/BaseIndex.txt";
+    const QString BASE = "Resources/BaseIndex.txt";
     const QString ARCHIVO = ":/TMatematicas.txt";
     enum Columna
     {

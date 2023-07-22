@@ -43,7 +43,7 @@ private:
     SelecJugadores jug;
     QString m_tema;
     int m_level;
-    const QString BASE = ":/Resources/BaseIndex.txt";
+    const QString BASE = "Resources/BaseIndex.txt";
     Jugadores *m_p1=new Jugadores(jug.p1());
     Jugadores *m_p2=new Jugadores(jug.p2());
     Jugadores *m_p3=new Jugadores(jug.p3());

@@ -41,20 +41,33 @@ NewTematica::~NewTematica()
 void NewTematica::cargarPreguntas()
 {
     // Verificar si el archivo existe
-    QFile archivo(path);
-    if (!archivo.exists())
+    QString filePath="Resources/Temas" + path;
+    qDebug() << filePath;
+    // Verificar si el archivo existe
+    QFile archivo(filePath);
+    if (!archivo.exists()) {
+        qDebug()<< "NOP";
         return;
-
-    // cargar datos
-    if (archivo.open(QFile::ReadOnly )) {
-        QDataStream entrada(&archivo);
-        //int fila;
-        QString datos[2];
-        for(int i=0;ui->tblLista->rowCount();i++){
-        entrada << datos[0] << datos[1];
-        ui->tblLista->setItem(i, PREGUNTAS, new QTableWidgetItem(datos[PREGUNTAS]));
-        ui->tblLista->setItem(i, RESPUESTAS, new QTableWidgetItem(datos[RESPUESTAS]));
     }
+
+    // Limpiar la tabla existente
+    ui->tblLista->clearContents();
+    ui->tblLista->setRowCount(0);
+
+    // Cargar las preguntas del nuevo archivo
+    if (archivo.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream entrada(&archivo);
+        int fila = 0;
+        while (!entrada.atEnd()) {
+            QString linea = entrada.readLine();
+            QStringList datos = linea.split(";");
+            if (datos.size() == 2) {
+                ui->tblLista->insertRow(fila);
+                ui->tblLista->setItem(fila, PREGUNTAS, new QTableWidgetItem(datos[0]));
+                ui->tblLista->setItem(fila, RESPUESTAS, new QTableWidgetItem(datos[1]));
+                fila++;
+            }
+        }
         archivo.close();
     }
 }
@@ -132,10 +145,10 @@ void NewTematica::on_btn_Guardar_clicked()
 
     qDebug() << "Guardar en path: " << binFilePath;
     // Obtener la ruta de la carpeta de la aplicación
-    QString folderPath =  ""; //"/Resources/Temas";
+    QString folderPath =  "Resources/Temas";
 
     // Combinar la ruta de la carpeta y el nombre del archivo
-    QString selectedFilePath = folderPath + "" + binFilePath;
+    QString selectedFilePath = folderPath + "/" + binFilePath;
 
     // Abrir el archivo binario en modo escritura
     QDir dir;
@@ -149,20 +162,33 @@ void NewTematica::on_btn_Guardar_clicked()
         return;
     }
 
-    QDataStream salida(&nue);
+    QTextStream salida(&nue);
 
     for (int i = 0; i < filas; i++) {
         QTableWidgetItem *pregunta = ui->tblLista->item(i, PREGUNTAS);
         QTableWidgetItem *respuesta = ui->tblLista->item(i, RESPUESTAS);
 
-        QString preguntaText = pregunta->text();
-        QString respuestaText = respuesta->text();
+        QString preguntaText = pregunta->text() + ";" + respuesta->text()+"\n";
+
 
         // Escribir los datos en el archivo binario
-        salida << preguntaText << respuestaText;
+        salida << preguntaText;
     }
 
     nue.close();
+    QFile ind(BASE);
+    if (!ind.open(QIODevice::WriteOnly | QIODevice::Append))
+        return;
+
+    QTextStream indix(&ind);
+    indix << fileName + "\n";
+    ind.close();
+    //Cargar Nuevo tema
+    ui->cbx_Temas->removeItem(ui->cbx_Temas->count()-1);
+    ui->cbx_Temas->addItem(fileName);
+    ui->cbx_Temas->addItem("Añadir Tema...");
+    ui->ltxNombreTematica->clear();
+
     QMessageBox::information(this, "Guardar archivo", "Preguntas guardadas exitosamente");
 
 
@@ -258,15 +284,24 @@ void NewTematica::on_btn_Cerrar_clicked()
 void NewTematica::on_cbx_Temas_currentTextChanged(const QString &arg1)
 {
     ui->ltxNombreTematica->setEnabled(false);
+    ui->btn_CargaPreguntas->setEnabled(false);
     if (arg1=="Añadir Tema..."){
         ui->ltxNombreTematica->setEnabled(true);
+        ui->btn_CargaPreguntas->setEnabled(true);
         return;
     }
     if (arg1=="<Seleccionar>")
         return;
-    path = ":/"+arg1 + ".oca";
+    path = "/"+arg1 + ".oca";
+
     cargarPreguntas();
-    qDebug() << path;
-    qDebug() << arg1;
+}
+
+
+void NewTematica::on_btn_NewTopic_released()
+{
+    ui->cbx_Temas->setCurrentIndex(ui->cbx_Temas->count()-1);
+    qDebug() << ui->cbx_Temas->count();
+
 }
 

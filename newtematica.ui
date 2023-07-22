@@ -79,7 +79,24 @@
     <layout class="QGridLayout" name="gridLayout_3">
      <item row="5" column="0" colspan="3">
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="0" column="0">
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btn_CargaPreguntas">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Cargar Archivo</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="btn_Guardar">
+         <property name="text">
+          <string>Guardar</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
         <spacer name="horizontalSpacer">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -92,17 +109,10 @@
          </property>
         </spacer>
        </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="btn_CargaPreguntas">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btn_NewTopic">
          <property name="text">
-          <string>Archivo</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="btn_Guardar">
-         <property name="text">
-          <string>Guardar</string>
+          <string>Añadir Tema... </string>
          </property>
         </widget>
        </item>
