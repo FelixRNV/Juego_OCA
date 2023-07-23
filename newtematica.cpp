@@ -132,7 +132,12 @@ void NewTematica::on_btn_Guardar_clicked()
     }
 
     // Obtener el nombre del archivo ingresado por el usuario
-    QString fileName = ui->ltxNombreTematica->text();
+    QString fileName;
+    if (ui->cbx_Temas->currentText()=="Añadir Tema...")
+        fileName = ui->ltxNombreTematica->text();
+    else
+        fileName=ui->cbx_Temas->currentText();
+
 
     // Verificar que se haya ingresado un nombre de archivo válido
     if (fileName.isEmpty()) {
@@ -176,6 +181,8 @@ void NewTematica::on_btn_Guardar_clicked()
     }
 
     nue.close();
+
+    if (ui->cbx_Temas->currentText()=="Añadir Tema..."){
     QFile ind(BASE);
     if (!ind.open(QIODevice::WriteOnly | QIODevice::Append))
         return;
@@ -184,10 +191,12 @@ void NewTematica::on_btn_Guardar_clicked()
     indix << fileName + "\n";
     ind.close();
     //Cargar Nuevo tema
+
     ui->cbx_Temas->removeItem(ui->cbx_Temas->count()-1);
     ui->cbx_Temas->addItem(fileName);
     ui->cbx_Temas->addItem(tr("Añadir Tema..."));
     ui->ltxNombreTematica->clear();
+    }
 
     QMessageBox::information(this, tr("Guardar archivo"), tr("Preguntas guardadas exitosamente"));
 

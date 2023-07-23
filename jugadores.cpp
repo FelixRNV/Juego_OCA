@@ -32,6 +32,31 @@ void Jugadores::setJuga(QString name, int pos, int av)
     m_avatar=av;
 }
 
+bool Jugadores::lost() const
+{
+    return m_lost;
+}
+
+void Jugadores::setLost(bool newLost)
+{
+    m_lost = newLost;
+}
+
+void Jugadores::setPosicion(int newPosicion)
+{
+    m_posicion = newPosicion;
+}
+
+bool Jugadores::getM_3t() const
+{
+    return m_3t;
+}
+
+void Jugadores::setM_3t(bool newM_3t)
+{
+    m_3t = newM_3t;
+}
+
 Jugadores::Jugadores()
 {
 

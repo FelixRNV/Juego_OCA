@@ -13,6 +13,8 @@
 #include <QUrl>
 #include <QDir> // Agregamos esta línea para incluir QDir
 #include <QStandardPaths> // Agregamos esta línea para incluir QStandardPaths
+#include <QStack>
+#include <QVector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Juego_OCA; }
@@ -43,10 +45,16 @@ private:
     Ui::Juego_OCA *ui;
     const QString ARCHIVO = ":/Resources/Reglamento_juego_OCA.pdf";
     QString m_tema;
+    QStack<QString> preguntas;
     int m_level;
     Jugadores *p1;
     Jugadores *p2;
     Jugadores *p3;
     Jugadores *p4;
+
+    int moveSpace();
+    QString preguntar();
+    void cargarPreguntas();
+    void casilleroSpe(int avan, int jug);
 };
 #endif // JUEGO_OCA_H

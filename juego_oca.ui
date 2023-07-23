@@ -36,7 +36,7 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>0</y>
       <width>1247</width>
       <height>901</height>
@@ -832,6 +832,29 @@ border-left-color: rgb(192, 191, 188);</string>
       </item>
      </layout>
     </widget>
+    <widget class="QLabel" name="ltxNotifi">
+     <property name="geometry">
+      <rect>
+       <x>850</x>
+       <y>130</y>
+       <width>331</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -863,9 +886,31 @@ border-left-color: rgb(192, 191, 188);</string>
    <addaction name="menuAyuda"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Nuevo"/>
+   <addaction name="action_Tem_ticas"/>
+  </widget>
   <action name="action_Nuevo">
    <property name="text">
-    <string>&amp;Nuevo..</string>
+    <string>&amp;Nuevo Juego..</string>
+   </property>
+   <property name="toolTip">
+    <string>Nuevo Juego..</string>
    </property>
    <property name="font">
     <font>

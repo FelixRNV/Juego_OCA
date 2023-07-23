@@ -183,6 +183,16 @@
    </property>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>ltx_jugador1</tabstop>
+  <tabstop>cbx_jugador1</tabstop>
+  <tabstop>ltx_jugador2</tabstop>
+  <tabstop>cbx_jugador2</tabstop>
+  <tabstop>ltx_jugador3</tabstop>
+  <tabstop>cbx_jugador3</tabstop>
+  <tabstop>ltx_jugador4</tabstop>
+  <tabstop>cbx_jugador4</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

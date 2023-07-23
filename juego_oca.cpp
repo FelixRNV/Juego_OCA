@@ -27,10 +27,9 @@ void Juego_OCA::on_action_Nuevo_triggered()
         m_level=ne.level();
         m_tema=ne.Tema();
         ui->ltxJugador->setText(p1->name());
-        qDebug() << p1->name();
+        ui->ltxNotifi->setText("Lanza el dado");
     }
-
-
+    cargarPreguntas();
 }
 
 
@@ -99,5 +98,161 @@ void Juego_OCA::on_actionA_cerca_de_triggered()
 void Juego_OCA::on_action_Salir_triggered()
 {
     close();
+}
+
+void Juego_OCA::cargarPreguntas()
+{
+    QString path = "Resources/Temas/"+m_tema+".oca";
+    // Abre el archivo de preguntas y carga las preguntas necesarias
+
+   QFile preg(path);
+   if (!preg.exists()){
+       QMessageBox::warning(this,"Error Fatal","No se encuentra el tema");
+       return;
+   }
+
+   //Se asegura de que la pila este vacía antes de ser llenada
+   preguntas.clear();
+   //Cuento el número de preguntas
+   if(preg.open(QIODevice::ReadOnly | QIODevice::Text)){
+       QTextStream in(&preg);
+       QString all= in.readAll();
+       QStringList linea = all.split("\n");
+       int total = all.count("\n");
+       // Se llena la pila
+       switch (m_level){
+       case 0:
+           if (total >15){
+               for (int j = 0;j<3;j++){
+                   for (int i=0;i<15;i++)
+                   {
+                       preguntas.append(linea[i]);
+                   }
+               }
+           }else {
+               int ap=15-total;
+               ap=ap/total;
+               ap=ap+1;
+               if(((ap*total)-11)>=0){
+                   for (int j = 0;j<ap*4;j++){
+                       for (int i=0;i<total;i++)
+                       {
+                           preguntas.append(linea[i]);
+                       }
+                   }
+               }
+
+           }
+           break;
+       case 1:
+           if (total >15){
+               for (int j = 0;j<3;j++){
+                   for (int i=0;i<30;i++)
+                   {
+                       preguntas.append(linea[i]);
+                   }
+               }
+           }else {
+               int ap=15-total;
+               ap=ap/total;
+               ap=ap+1;
+               if(((ap*total)-11)>=0){
+                   for (int j = 0;j<ap*4;j++){
+                       for (int i=0;i<total;i++)
+                       {
+                           preguntas.append(linea[i]);
+                       }
+                   }
+               }
+
+           }
+           break;
+       case 2:
+           if (total >15){
+               for (int j = 0;j<3;j++){
+                   for (int i=0;i<45;i++)
+                   {
+                       preguntas.append(linea[i]);
+                   }
+               }
+           }else {
+               int ap=15-total;
+               ap=ap/total;
+               ap=ap+1;
+               if(((ap*total)-11)>=0){
+                   for (int j = 0;j<ap*4;j++){
+                       for (int i=0;i<total;i++)
+                       {
+                           preguntas.append(linea[i]);
+                       }
+                   }
+               }
+
+           }
+           break;
+       }
+
+
+
+   }
+
+}
+
+void Juego_OCA::casilleroSpe(int avan, int jug)
+{
+    int a=0;
+    bool lo = false;
+    bool tu3 = false;
+    QVector<int> ocas = {5,9,14,18,23,27,32,36,41,45,50,54,59,63};
+    QVector<int> puente={6,12};
+    QVector<int> dados={26,56}; //Se suma 9 a lo sacado
+    switch (jug){
+    case 1:
+        a=avan + p1->posicion();
+
+        break;
+    case 2:
+        a=avan + p2->posicion();
+        break;
+    case 3:
+        a=avan + p3->posicion();
+        break;
+    case 4:
+        a=avan + p4->posicion();
+        break;
+    }
+    if(ocas.contains(a)){
+        int indice;
+        for(int i=0;i<ocas.length();i++){
+            if(ocas[i] == a)
+                indice=i;
+        }
+        if (ocas[indice]==63)
+            a=ocas[indice];
+        else
+            a=ocas[indice+1];
+    }else if(puente.contains(a)){
+        if (a==6)
+            a=12;
+        else
+            a=6;
+    }else if(dados.contains(a)){ //Si cae en dados
+        a=9+a;
+    }else if(a==20){ //Posada
+        lo=true;
+        a=20;
+    }else if(a==42){
+        a=30;
+    }else if(a==58){
+        a=0;
+    }else if(a==52 || a==31){
+        lo=true;
+        tu3=true;
+    }
+    p1->setPosicion(a);
+    p1->setLost(lo);
+    p1->setM_3t(tu3);
+
+
 }
 
