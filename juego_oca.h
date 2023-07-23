@@ -53,9 +53,12 @@ private:
     Jugadores *p3;
     Jugadores *p4;
 
-    int moveSpace();
-    QString preguntar();
-    void cargarPreguntas();
-    bool casilleroSpe(int avan, int jug);
+    int moveSpace(); //Grafica las fichas
+    QString preguntar(); //Obtiene la pregunta
+    void cargarPreguntas(); //Almacena las preguntas en un Stack
+    bool casilleroSpe(int avan, int jug); //Analiza los casilleros especiales
+    void setJugador(int jug); //Muestra el jugador que toca en pantalla
+    void setCasilleros(int jug); //Muestra la posición del jugador
+    void setTimer(int seg); //Crea una espera de "seg" segundos
 };
 #endif // JUEGO_OCA_H

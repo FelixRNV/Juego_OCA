@@ -58,45 +58,45 @@ void Juego_OCA::on_btnDado_released()
         jug=1;
     if (jug==1){
         if (!casilleroSpe(dado,jug)){
-            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[1]);
+            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
             if  (respons==QMessageBox::Yes){
-                if(pregu[2]=="V")
+                if(pregu[1]=="V")
                    p1->setPosicion(dado+p1->posicion());
              } else {
-                if(pregu[2]=="F")
+                if(pregu[1]=="F")
                    p1->setPosicion(dado+p1->posicion());
                }
         }
     } else if (jug==2){
         if (!casilleroSpe(dado,jug)){
-            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[1]);
+            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
             if  (respons==QMessageBox::Yes){
-                if(pregu[2]=="V")
+                if(pregu[1]=="V")
                    p2->setPosicion(dado+p2->posicion());
              } else {
-                if(pregu[2]=="F")
+                if(pregu[1]=="F")
                    p2->setPosicion(dado+p2->posicion());
                }
         }
     } else if (jug==3){
         if (!casilleroSpe(dado,jug)){
-            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[1]);
+            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
             if  (respons==QMessageBox::Yes){
-                if(pregu[2]=="V")
+                if(pregu[1]=="V")
                    p3->setPosicion(dado+p3->posicion());
              } else {
-                if(pregu[2]=="F")
+                if(pregu[1]=="F")
                    p3->setPosicion(dado+p3->posicion());
                }
         }
     } else if (jug==4){
         if (!casilleroSpe(dado,jug)){
-            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[1]);
+            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
             if  (respons==QMessageBox::Yes){
-                if(pregu[2]=="V")
+                if(pregu[1]=="V")
                    p4->setPosicion(dado+p4->posicion());
              } else {
-                if(pregu[2]=="F")
+                if(pregu[1]=="F")
                    p4->setPosicion(dado+p4->posicion());
                }
         }
@@ -334,7 +334,44 @@ bool Juego_OCA::casilleroSpe(int avan, int jug)
         p4->setM_3t(tu3);
         break;
     }
+    setCasilleros(jug);
     return res;
 
+}
+
+void Juego_OCA::setJugador(int jug)
+{
+    switch (jug){
+    case 1:
+        ui->ltxJugador->setText(p1->name());
+        break;
+    case 2:
+        ui->ltxJugador->setText(p2->name());
+        break;
+    case 3:
+        ui->ltxJugador->setText(p3->name());
+        break;
+    case 4:
+        ui->ltxJugador->setText(p4->name());
+        break;
+    }
+}
+
+void Juego_OCA::setCasilleros(int jug)
+{
+    switch (jug){
+    case 1:
+        ui->ltxCasillero->setText(QString(p1->posicion()));
+        break;
+    case 2:
+        ui->ltxCasillero->setText(QString(p2->posicion()));
+        break;
+    case 3:
+        ui->ltxCasillero->setText(QString(p3->posicion()));
+        break;
+    case 4:
+        ui->ltxCasillero->setText(QString(p4->posicion()));
+        break;
+    }
 }
 
