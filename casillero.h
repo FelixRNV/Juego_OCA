@@ -17,7 +17,6 @@ public:
 
      void enableAV(int avatar);
      void deseableAV(int avatar);
-
 private:
     Ui::Casillero *ui;
 

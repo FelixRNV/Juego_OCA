@@ -359,19 +359,50 @@ void Juego_OCA::setJugador(int jug)
 
 void Juego_OCA::setCasilleros(int jug)
 {
+    QString str;
     switch (jug){
     case 1:
-        ui->ltxCasillero->setText(QString(p1->posicion()));
+        str.setNum(p1->posicion());
         break;
     case 2:
-        ui->ltxCasillero->setText(QString(p2->posicion()));
+        str.setNum(p2->posicion());
         break;
     case 3:
-        ui->ltxCasillero->setText(QString(p3->posicion()));
+        str.setNum(p3->posicion());
         break;
     case 4:
-        ui->ltxCasillero->setText(QString(p4->posicion()));
+        str.setNum(p4->posicion());
         break;
     }
+    ui->ltxCasillero->setText(str);
 }
 
+// Agregar la definición de setTimer en el archivo de implementación (juego_oca.cpp)
+void Juego_OCA::setTimer(int seg)
+{
+    // Deshabilitar el botón de lanzar dado mientras se realiza el retraso
+    ui->btnDado->setEnabled(false);
+
+    // Crear una instancia de QTimer
+    QTimer* timer = new QTimer(this);
+
+    // Conectar el evento timeout del QTimer con una función lambda que manejará el movimiento de las fichas
+    connect(timer, &QTimer::timeout, this, [this]() {
+        // Realizar el movimiento de las fichas aquí (llamar a la función moveSpace)
+
+        // Habilitar nuevamente el botón de lanzar dado
+        ui->btnDado->setEnabled(true);
+    });
+
+    // Establecer el intervalo del timer en "seg" segundos (convertidos a milisegundos)
+    timer->setInterval(seg * 1000);
+
+    // Iniciar el timer
+    timer->start();
+
+    /*
+     * // Llamar a setTimer para crear una espera de 0.35 segundos
+        setTimer(0.35);
+        llamarlo cuando se quiera crear el retraso en segundos
+*/
+}

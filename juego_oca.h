@@ -15,6 +15,7 @@
 #include <QStandardPaths> // Agregamos esta línea para incluir QStandardPaths
 #include <QStack>
 #include <QVector>
+#include "QTimer"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Juego_OCA; }
@@ -52,7 +53,6 @@ private:
     Jugadores *p2;
     Jugadores *p3;
     Jugadores *p4;
-
     int moveSpace(); //Grafica las fichas
     QString preguntar(); //Obtiene la pregunta
     void cargarPreguntas(); //Almacena las preguntas en un Stack
