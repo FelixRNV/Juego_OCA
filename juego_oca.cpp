@@ -6,7 +6,7 @@ Juego_OCA::Juego_OCA(QWidget *parent)
     , ui(new Ui::Juego_OCA)
 {
     ui->setupUi(this);
-
+    ui->btnDado->setEnabled(false);
 
 }
 
@@ -28,7 +28,9 @@ void Juego_OCA::on_action_Nuevo_triggered()
         m_tema=ne.Tema();
         ui->ltxJugador->setText(p1->name());
         ui->ltxNotifi->setText("Lanza el dado");
+        ui->btnDado->setEnabled(true);
     }
+
     cargarPreguntas();
 }
 
@@ -47,8 +49,59 @@ void Juego_OCA::on_btnDado_released()
 {
     int dado;
 
+    QStringList pregu=preguntas.pop().split(";");
+
     dado = QRandomGenerator::system()->bounded(1,6);
     QMessageBox::information(this, "Dado", "Avanza : "+ QString::number(dado) +" Casilleros");
+
+    if(jug<4)
+        jug=1;
+    if (jug==1){
+        if (!casilleroSpe(dado,jug)){
+            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[1]);
+            if  (respons==QMessageBox::Yes){
+                if(pregu[2]=="V")
+                   p1->setPosicion(dado+p1->posicion());
+             } else {
+                if(pregu[2]=="F")
+                   p1->setPosicion(dado+p1->posicion());
+               }
+        }
+    } else if (jug==2){
+        if (!casilleroSpe(dado,jug)){
+            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[1]);
+            if  (respons==QMessageBox::Yes){
+                if(pregu[2]=="V")
+                   p2->setPosicion(dado+p2->posicion());
+             } else {
+                if(pregu[2]=="F")
+                   p2->setPosicion(dado+p2->posicion());
+               }
+        }
+    } else if (jug==3){
+        if (!casilleroSpe(dado,jug)){
+            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[1]);
+            if  (respons==QMessageBox::Yes){
+                if(pregu[2]=="V")
+                   p3->setPosicion(dado+p3->posicion());
+             } else {
+                if(pregu[2]=="F")
+                   p3->setPosicion(dado+p3->posicion());
+               }
+        }
+    } else if (jug==4){
+        if (!casilleroSpe(dado,jug)){
+            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[1]);
+            if  (respons==QMessageBox::Yes){
+                if(pregu[2]=="V")
+                   p4->setPosicion(dado+p4->posicion());
+             } else {
+                if(pregu[2]=="F")
+                   p4->setPosicion(dado+p4->posicion());
+               }
+        }
+    }
+    jug++;
 }
 
 
@@ -107,7 +160,7 @@ void Juego_OCA::cargarPreguntas()
 
    QFile preg(path);
    if (!preg.exists()){
-       QMessageBox::warning(this,"Error Fatal","No se encuentra el tema");
+       //QMessageBox::warning(this,"Error Fatal","No se encuentra el tema");
        return;
    }
 
@@ -198,11 +251,12 @@ void Juego_OCA::cargarPreguntas()
 
 }
 
-void Juego_OCA::casilleroSpe(int avan, int jug)
+bool Juego_OCA::casilleroSpe(int avan, int jug)
 {
     int a=0;
     bool lo = false;
     bool tu3 = false;
+    bool res= false;
     QVector<int> ocas = {5,9,14,18,23,27,32,36,41,45,50,54,59,63};
     QVector<int> puente={6,12};
     QVector<int> dados={26,56}; //Se suma 9 a lo sacado
@@ -222,6 +276,7 @@ void Juego_OCA::casilleroSpe(int avan, int jug)
         break;
     }
     if(ocas.contains(a)){
+        res=true;
         int indice;
         for(int i=0;i<ocas.length();i++){
             if(ocas[i] == a)
@@ -232,27 +287,54 @@ void Juego_OCA::casilleroSpe(int avan, int jug)
         else
             a=ocas[indice+1];
     }else if(puente.contains(a)){
+        res=true;
         if (a==6)
             a=12;
         else
             a=6;
     }else if(dados.contains(a)){ //Si cae en dados
+        res=true;
         a=9+a;
     }else if(a==20){ //Posada
+        res=true;
         lo=true;
         a=20;
-    }else if(a==42){
+    }else if(a==42){ //Laberinto
+        res=true;
         a=30;
-    }else if(a==58){
+    }else if(a==58){ //Calavera
+        res=true;
         a=0;
-    }else if(a==52 || a==31){
+    }else if(a==52 || a==31){ //Pozo o cárcel
+        res=true;
         lo=true;
         tu3=true;
     }
-    p1->setPosicion(a);
-    p1->setLost(lo);
-    p1->setM_3t(tu3);
 
+    switch (jug){
+    case 1:
+        p1->setPosicion(a);
+        p1->setLost(lo);
+        p1->setM_3t(tu3);
+
+        break;
+    case 2:
+        p2->setPosicion(a);
+        p2->setLost(lo);
+        p2->setM_3t(tu3);
+        break;
+    case 3:
+        p3->setPosicion(a);
+        p3->setLost(lo);
+        p3->setM_3t(tu3);
+        break;
+    case 4:
+        p4->setPosicion(a);
+        p4->setLost(lo);
+        p4->setM_3t(tu3);
+        break;
+    }
+    return res;
 
 }
 

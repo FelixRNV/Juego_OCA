@@ -15,7 +15,7 @@ NewJuego::NewJuego(QWidget *parent) :
     ui->cbx_dificultad->addItem("Baja");
     ui->cbx_dificultad->addItem("Media");
     ui->cbx_dificultad->addItem("Alta");
-
+    valid = false;
     //Cargar ComboBox de temas
     QFile ind(BASE);
     if(!ind.open(QIODevice::ReadOnly | QIODevice::Text))

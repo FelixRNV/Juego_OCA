@@ -47,6 +47,7 @@ private:
     QString m_tema;
     QStack<QString> preguntas;
     int m_level;
+    int jug=1;
     Jugadores *p1;
     Jugadores *p2;
     Jugadores *p3;
@@ -55,6 +56,6 @@ private:
     int moveSpace();
     QString preguntar();
     void cargarPreguntas();
-    void casilleroSpe(int avan, int jug);
+    bool casilleroSpe(int avan, int jug);
 };
 #endif // JUEGO_OCA_H
