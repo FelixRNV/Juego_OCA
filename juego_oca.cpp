@@ -194,7 +194,7 @@ void Juego_OCA::on_action_Salir_triggered()
 
 void Juego_OCA::moveSpace(int avan, int jug, bool tru)
 {
-    int posAct=0;
+    int posAct=0, y=0;
     switch (jug){
     case 1:
         posAct = p1->posicion();
@@ -211,9 +211,12 @@ void Juego_OCA::moveSpace(int avan, int jug, bool tru)
     }
     if (!tru)
         return;
+
     for (int j=0;j<avan;j++){
-        disactivatedAv((posAct+j-1),jug);
-        activatedAv((posAct+j),jug);
+        y=posAct+j;
+        qDebug() << posAct+j;
+        disactivatedAv(posAct,jug);
+        activatedAv(y,jug);
         setTimer(1);
         disactivatedAv((posAct+j),jug);
     }
@@ -236,8 +239,12 @@ void Juego_OCA::activatedAv(int casil, int jug)
         pa->setJuga(p4->name(),p4->posicion(),p4->avatar()+1);
         break;
     }
+    qDebug() << "pa postion: " <<pa->posicion()<<"pa avatar: "<<pa->avatar();
 
     switch (casil){
+    case 0:
+        ui->widCasi_0->enableAV(pa->avatar());
+        break;
     case 1:
         ui->widCasi_1->enableAV(pa->avatar());
         break;
@@ -449,6 +456,9 @@ void Juego_OCA::disactivatedAv(int casil, int jug)
         break;
     }
     switch (casil){
+    case 0:
+        ui->widCasi_0->deseableAV(pa->avatar());
+        break;
     case 1:
         ui->widCasi_1->deseableAV(pa->avatar());
         break;
