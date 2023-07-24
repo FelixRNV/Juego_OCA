@@ -52,6 +52,8 @@ private:
     int m_juegan;
     int turno;
     int jug_n;
+    int gana;
+    QString gnj;
     Jugadores *p1;
     Jugadores *p2;
     Jugadores *p3;

@@ -80,7 +80,10 @@ void Juego_OCA::on_btnDado_released()
 
     dado = QRandomGenerator::system()->bounded(1,6);
     QMessageBox::information(this, tr("Dado"), tr("Avanza : ")+ QString::number(dado) +tr(" Casilleros"));
-
+    if (gana==1||gana==2||gana==3||gana==4){
+        ui->ltxNotifi->setText(gnj);
+        return;
+    }
     if(jug>m_juegan+2)
         jug=1;
     setJugador(jug);
@@ -777,7 +780,7 @@ void Juego_OCA::on_btnDado_released()
             a=avan + p4->posicion();
             break;
         }
-        qDebug() << "dado + posicion: " << a;
+
         if(ocas.contains(a)){
             res=true;
             int indice;
@@ -823,24 +826,45 @@ void Juego_OCA::on_btnDado_released()
         }
 
         disactivatedAv(b,jug);
+        QString str;
         switch (jug){
         case 1:
+            str = "El jugador " + p1->name() + " ha sido el GANADOR";
+            if (a==63){
+                QMessageBox::information(this,"Ganador",str);
+                gana=1;
+            }
             p1->setPosicion(a);
             p1->setLost(lo);
             p1->setM_3t(tu3);
 
             break;
         case 2:
+            str = "El jugador " + p2->name() + " ha sido el GANADOR";
+            if (a==63){
+                QMessageBox::information(this,"Ganador",str);
+                gana=2;
+            }
             p2->setPosicion(a);
             p2->setLost(lo);
             p2->setM_3t(tu3);
             break;
         case 3:
+            str = "El jugador " + p3->name() + " ha sido el GANADOR";
+            if (a==63){
+                QMessageBox::information(this,"Ganador",str);
+                gana=3;
+            }
             p3->setPosicion(a);
             p3->setLost(lo);
             p3->setM_3t(tu3);
             break;
         case 4:
+            str = "El jugador " + p4->name() + " ha sido el GANADOR";
+            if (a==63){
+                QMessageBox::information(this,"Ganador",str);
+                gana=4;
+            }
             p4->setPosicion(a);
             p4->setLost(lo);
             p4->setM_3t(tu3);
@@ -848,6 +872,7 @@ void Juego_OCA::on_btnDado_released()
         }
         activatedAv(a,jug);
         setCasilleros(jug);
+        str=gnj;
         return res;
 
     }

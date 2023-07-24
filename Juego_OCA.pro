@@ -19,7 +19,6 @@ SOURCES += \
     newjuego.cpp \
     newtematica.cpp \
     preguntas.cpp \
-    puntajes.cpp \
     selecjugadores.cpp \
     tematicas.cpp
 
@@ -33,7 +32,6 @@ HEADERS += \
     newjuego.h \
     newtematica.h \
     preguntas.h \
-    puntajes.h \
     selecjugadores.h \
     tematicas.h
 
@@ -45,7 +43,6 @@ FORMS += \
     juego_oca.ui \
     newjuego.ui \
     newtematica.ui \
-    puntajes.ui \
     selecjugadores.ui \
     tematicas.ui
     TRANSLATIONS += \
