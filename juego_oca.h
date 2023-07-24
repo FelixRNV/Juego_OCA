@@ -55,9 +55,9 @@ private:
     Jugadores *p3;
     Jugadores *p4;
 
-    void moveSpace(int avan, int jug); //Grafica las fichas
-    void activatedAv(int casil, int jug);
-    void disactivatedAv(int casil, int jug);
+    void moveSpace(int avan, int jug, bool tru); //Grafica las fichas
+    void activatedAv(int casil, int jug); //Activa la imagen de una ficha en una casilla
+    void disactivatedAv(int casil, int jug); //Desactiva la imagen de una ficha en una casilla
     QString preguntar(); //Obtiene la pregunta
     void cargarPreguntas(); //Almacena las preguntas en un Stack
     bool casilleroSpe(int avan, int jug); //Analiza los casilleros especiales

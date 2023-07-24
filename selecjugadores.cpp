@@ -191,22 +191,22 @@ int SelecJugadores::indi() const
     return m_indi;
 }
 
-const Jugadores &SelecJugadores::p1() const
+Jugadores &SelecJugadores::p1()
 {
     return m_p1;
 }
 
-const Jugadores &SelecJugadores::p2() const
+Jugadores &SelecJugadores::p2()
 {
     return m_p2;
 }
 
-const Jugadores &SelecJugadores::p3() const
+Jugadores &SelecJugadores::p3()
 {
     return m_p3;
 }
 
-const Jugadores &SelecJugadores::p4() const
+Jugadores &SelecJugadores::p4()
 {
     return m_p4;
 }

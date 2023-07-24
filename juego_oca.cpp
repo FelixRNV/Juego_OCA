@@ -32,11 +32,11 @@ void Juego_OCA::on_action_Nuevo_triggered()
         m_juegan=ne.jueg();
         qDebug() << "Juegan: " << m_juegan;
     }
-        // Borro posiciones previas
-        ui->widCasi_0->deseableAV(1);
-        ui->widCasi_0->deseableAV(2);
-        ui->widCasi_0->deseableAV(3);
-        ui->widCasi_0->deseableAV(4);
+    // Borro posiciones previas
+    ui->widCasi_0->deseableAV(1);
+    ui->widCasi_0->deseableAV(2);
+    ui->widCasi_0->deseableAV(3);
+    ui->widCasi_0->deseableAV(4);
 
     switch (m_juegan){
     case 0:
@@ -88,47 +88,56 @@ void Juego_OCA::on_btnDado_released()
         if (!casilleroSpe(dado,jug)){
             QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
             if  (respons==QMessageBox::Yes){
-                if(pregu[1]=="V")
-                   p1->setPosicion(dado+p1->posicion());
-             } else {
-                if(pregu[1]=="F")
-                   p1->setPosicion(dado+p1->posicion());
-               }
-        }
-    } else if (jug==2){
-        if (!casilleroSpe(dado,jug)){
-               QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
-            if  (respons==QMessageBox::Yes){
-                if(pregu[1]=="V")
-                   p2->setPosicion(dado+p2->posicion());
-             } else {
-                if(pregu[1]=="F")
-                   p2->setPosicion(dado+p2->posicion());
-               }
-        }
-    } else if (jug==3){
+                if(pregu[1]=="V"){
+                    moveSpace(dado,1,respons);
+                    p1->setPosicion(dado+p1->posicion());
+                } else {
+                    if(pregu[1]=="F"){
+                        moveSpace(dado,1,respons);
+                        p1->setPosicion(dado+p1->posicion());
+                    }
+                }
+            }}} else if (jug==2){
         if (!casilleroSpe(dado,jug)){
             QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
             if  (respons==QMessageBox::Yes){
-                if(pregu[1]=="V")
-                   p3->setPosicion(dado+p3->posicion());
-             } else {
-                if(pregu[1]=="F")
-                   p3->setPosicion(dado+p3->posicion());
-               }
-        }
-    } else if (jug==4){
+                if(pregu[1]=="V"){
+                    moveSpace(dado,2,respons);
+                    p2->setPosicion(dado+p2->posicion());
+                } else {
+                    if(pregu[1]=="F"){
+                        moveSpace(dado,2,respons);
+                        p2->setPosicion(dado+p2->posicion());
+                    }
+                }
+            }}} else if (jug==3){
         if (!casilleroSpe(dado,jug)){
             QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
             if  (respons==QMessageBox::Yes){
-                if(pregu[1]=="V")
-                   p4->setPosicion(dado+p4->posicion());
-             } else {
-                if(pregu[1]=="F")
-                   p4->setPosicion(dado+p4->posicion());
-               }
-        }
-    }
+                if(pregu[1]=="V"){
+                    moveSpace(dado,3,respons);
+                    p3->setPosicion(dado+p3->posicion());
+                } else {
+                    if(pregu[1]=="F"){
+                        moveSpace(dado,3,respons);
+                        p3->setPosicion(dado+p3->posicion());
+                    }
+                }
+            }
+        }} else if (jug==4){
+        if (!casilleroSpe(dado,jug)){
+            QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
+            if  (respons==QMessageBox::Yes){
+                if(pregu[1]=="V"){
+                    moveSpace(dado,4,respons);
+                    p4->setPosicion(dado+p4->posicion());
+                } else {
+                    if(pregu[1]=="F"){
+                        moveSpace(dado,4,respons);
+                        p4->setPosicion(dado+p4->posicion());
+                    }
+                }
+            }}}
     jug++;
     setTimer(2);
 
@@ -183,23 +192,454 @@ void Juego_OCA::on_action_Salir_triggered()
     close();
 }
 
-void Juego_OCA::moveSpace(int avan, int jug)
+void Juego_OCA::moveSpace(int avan, int jug, bool tru)
 {
-    switch(avan){
+    int posAct=0;
+    switch (jug){
     case 1:
-        ui->widCasi_1->enableAV(jug);
+        posAct = p1->posicion();
         break;
     case 2:
+        posAct = p2->posicion();
         break;
     case 3:
+        posAct = p3->posicion();
         break;
     case 4:
-        break;
-    case 5:
-        break;
-    case 6:
+        posAct = p4->posicion();
         break;
     }
+    if (!tru)
+        return;
+    for (int j=0;j<avan;j++){
+        disactivatedAv((posAct+j-1),jug);
+        activatedAv((posAct+j),jug);
+        setTimer(1);
+        disactivatedAv((posAct+j),jug);
+    }
+}
+
+void Juego_OCA::activatedAv(int casil, int jug)
+{
+    Jugadores *pa= new Jugadores;
+    switch (jug){
+    case 1:
+        pa->setJuga(p1->name(),p1->posicion(),p1->avatar()+1);
+        break;
+    case 2:
+        pa->setJuga(p2->name(),p2->posicion(),p2->avatar()+1);
+        break;
+    case 3:
+        pa->setJuga(p3->name(),p3->posicion(),p3->avatar()+1);
+        break;
+    case 4:
+        pa->setJuga(p4->name(),p4->posicion(),p4->avatar()+1);
+        break;
+    }
+
+    switch (casil){
+    case 1:
+        ui->widCasi_1->enableAV(pa->avatar());
+        break;
+    case 2:
+        ui->widCasi_2->enableAV(pa->avatar());
+        break;
+    case 3:
+        ui->widCasi_3->enableAV(pa->avatar());
+        break;
+    case 4:
+        ui->widCasi_4->enableAV(pa->avatar());
+        break;
+    case 5:
+        ui->widCasi_5->enableAV(pa->avatar());
+        break;
+    case 6:
+        ui->widCasi_6->enableAV(pa->avatar());
+        break;
+    case 7:
+        ui->widCasi_7->enableAV(pa->avatar());
+        break;
+    case 8:
+        ui->widCasi_8->enableAV(pa->avatar());
+        break;
+    case 9:
+        ui->widCasi_9->enableAV(pa->avatar());
+        break;
+    case 10:
+        ui->widCasi_10->enableAV(pa->avatar());
+        break;
+    case 11:
+        ui->widCasi_11->enableAV(pa->avatar());
+        break;
+    case 12:
+        ui->widCasi_12->enableAV(pa->avatar());
+        break;
+    case 13:
+        ui->widCasi_13->enableAV(pa->avatar());
+        break;
+    case 14:
+        ui->widCasi_14->enableAV(pa->avatar());
+        break;
+    case 15:
+        ui->widCasi_15->enableAV(pa->avatar());
+        break;
+    case 16:
+        ui->widCasi_16->enableAV(pa->avatar());
+        break;
+    case 17:
+        ui->widCasi_17->enableAV(pa->avatar());
+        break;
+    case 18:
+        ui->widCasi_18->enableAV(pa->avatar());
+        break;
+    case 19:
+        ui->widCasi_19->enableAV(pa->avatar());
+        break;
+    case 20:
+        ui->widCasi_20->enableAV(pa->avatar());
+        break;
+    case 21:
+        ui->widCasi_21->enableAV(pa->avatar());
+        break;
+    case 22:
+        ui->widCasi_22->enableAV(pa->avatar());
+        break;
+    case 23:
+        ui->widCasi_23->enableAV(pa->avatar());
+        break;
+    case 24:
+        ui->widCasi_24->enableAV(pa->avatar());
+        break;
+    case 25:
+        ui->widCasi_25->enableAV(pa->avatar());
+        break;
+    case 26:
+        ui->widCasi_26->enableAV(pa->avatar());
+        break;
+    case 27:
+        ui->widCasi_27->enableAV(pa->avatar());
+        break;
+    case 28:
+        ui->widCasi_28->enableAV(pa->avatar());
+        break;
+    case 29:
+        ui->widCasi_29->enableAV(pa->avatar());
+        break;
+    case 30:
+        ui->widCasi_30->enableAV(pa->avatar());
+        break;
+    case 31:
+        ui->widCasi_31->enableAV(pa->avatar());
+        break;
+    case 32:
+        ui->widCasi_32->enableAV(pa->avatar());
+        break;
+    case 33:
+        ui->widCasi_33->enableAV(pa->avatar());
+        break;
+    case 34:
+        ui->widCasi_34->enableAV(pa->avatar());
+        break;
+    case 35:
+        ui->widCasi_35->enableAV(pa->avatar());
+        break;
+    case 36:
+        ui->widCasi_36->enableAV(pa->avatar());
+        break;
+    case 37:
+        ui->widCasi_37->enableAV(pa->avatar());
+        break;
+    case 38:
+        ui->widCasi_38->enableAV(pa->avatar());
+        break;
+    case 39:
+        ui->widCasi_39->enableAV(pa->avatar());
+        break;
+    case 40:
+        ui->widCasi_40->enableAV(pa->avatar());
+        break;
+    case 41:
+        ui->widCasi_41->enableAV(pa->avatar());
+        break;
+    case 42:
+        ui->widCasi_42->enableAV(pa->avatar());
+        break;
+    case 43:
+        ui->widCasi_43->enableAV(pa->avatar());
+        break;
+    case 44:
+        ui->widCasi_44->enableAV(pa->avatar());
+        break;
+    case 45:
+        ui->widCasi_45->enableAV(pa->avatar());
+        break;
+    case 46:
+        ui->widCasi_46->enableAV(pa->avatar());
+        break;
+    case 47:
+        ui->widCasi_47->enableAV(pa->avatar());
+        break;
+    case 48:
+        ui->widCasi_48->enableAV(pa->avatar());
+        break;
+    case 49:
+        ui->widCasi_49->enableAV(pa->avatar());
+        break;
+    case 50:
+        ui->widCasi_50->enableAV(pa->avatar());
+        break;
+    case 51:
+        ui->widCasi_51->enableAV(pa->avatar());
+        break;
+    case 52:
+        ui->widCasi_52->enableAV(pa->avatar());
+        break;
+    case 53:
+        ui->widCasi_53->enableAV(pa->avatar());
+        break;
+    case 54:
+        ui->widCasi_54->enableAV(pa->avatar());
+        break;
+    case 55:
+        ui->widCasi_55->enableAV(pa->avatar());
+        break;
+    case 56:
+        ui->widCasi_56->enableAV(pa->avatar());
+        break;
+    case 57:
+        ui->widCasi_57->enableAV(pa->avatar());
+        break;
+    case 58:
+        ui->widCasi_58->enableAV(pa->avatar());
+        break;
+    case 59:
+        ui->widCasi_59->enableAV(pa->avatar());
+        break;
+    case 60:
+        ui->widCasi_60->enableAV(pa->avatar());
+        break;
+    case 61:
+        ui->widCasi_61->enableAV(pa->avatar());
+        break;
+    case 62:
+        ui->widCasi_62->enableAV(pa->avatar());
+        break;
+    case 63:
+        ui->widCasi_63->enableAV(pa->avatar());
+        break;
+    }
+    delete pa;
+}
+
+void Juego_OCA::disactivatedAv(int casil, int jug)
+{
+    Jugadores *pa= new Jugadores;
+    switch (jug){
+    case 1:
+        pa->setJuga(p1->name(),p1->posicion(),p1->avatar()+1);
+        break;
+    case 2:
+        pa->setJuga(p2->name(),p2->posicion(),p2->avatar()+1);
+        break;
+    case 3:
+        pa->setJuga(p3->name(),p3->posicion(),p3->avatar()+1);
+        break;
+    case 4:
+        pa->setJuga(p4->name(),p4->posicion(),p4->avatar()+1);
+        break;
+    }
+    switch (casil){
+    case 1:
+        ui->widCasi_1->deseableAV(pa->avatar());
+        break;
+    case 2:
+        ui->widCasi_2->deseableAV(pa->avatar());
+        break;
+    case 3:
+        ui->widCasi_3->deseableAV(pa->avatar());
+        break;
+    case 4:
+        ui->widCasi_4->deseableAV(pa->avatar());
+        break;
+    case 5:
+        ui->widCasi_5->deseableAV(pa->avatar());
+        break;
+    case 6:
+        ui->widCasi_6->deseableAV(pa->avatar());
+        break;
+    case 7:
+        ui->widCasi_7->deseableAV(pa->avatar());
+        break;
+    case 8:
+        ui->widCasi_8->deseableAV(pa->avatar());
+        break;
+    case 9:
+        ui->widCasi_9->deseableAV(pa->avatar());
+        break;
+    case 10:
+        ui->widCasi_10->deseableAV(pa->avatar());
+        break;
+    case 11:
+        ui->widCasi_11->deseableAV(pa->avatar());
+        break;
+    case 12:
+        ui->widCasi_12->deseableAV(pa->avatar());
+        break;
+    case 13:
+        ui->widCasi_13->deseableAV(pa->avatar());
+        break;
+    case 14:
+        ui->widCasi_14->deseableAV(pa->avatar());
+        break;
+    case 15:
+        ui->widCasi_15->deseableAV(pa->avatar());
+        break;
+    case 16:
+        ui->widCasi_16->deseableAV(pa->avatar());
+        break;
+    case 17:
+        ui->widCasi_17->deseableAV(pa->avatar());
+        break;
+    case 18:
+        ui->widCasi_18->deseableAV(pa->avatar());
+        break;
+    case 19:
+        ui->widCasi_19->deseableAV(pa->avatar());
+        break;
+    case 20:
+        ui->widCasi_20->deseableAV(pa->avatar());
+        break;
+    case 21:
+        ui->widCasi_21->deseableAV(pa->avatar());
+        break;
+    case 22:
+        ui->widCasi_22->deseableAV(pa->avatar());
+        break;
+    case 23:
+        ui->widCasi_23->deseableAV(pa->avatar());
+        break;
+    case 24:
+        ui->widCasi_24->deseableAV(pa->avatar());
+        break;
+    case 25:
+        ui->widCasi_25->deseableAV(pa->avatar());
+        break;
+    case 26:
+        ui->widCasi_26->deseableAV(pa->avatar());
+        break;
+    case 27:
+        ui->widCasi_27->deseableAV(pa->avatar());
+        break;
+    case 28:
+        ui->widCasi_28->deseableAV(pa->avatar());
+        break;
+    case 29:
+        ui->widCasi_29->deseableAV(pa->avatar());
+        break;
+    case 30:
+        ui->widCasi_30->deseableAV(pa->avatar());
+        break;
+    case 31:
+        ui->widCasi_31->deseableAV(pa->avatar());
+        break;
+    case 32:
+        ui->widCasi_32->deseableAV(pa->avatar());
+        break;
+    case 33:
+        ui->widCasi_33->deseableAV(pa->avatar());
+        break;
+    case 34:
+        ui->widCasi_34->deseableAV(pa->avatar());
+        break;
+    case 35:
+        ui->widCasi_35->deseableAV(pa->avatar());
+        break;
+    case 36:
+        ui->widCasi_36->deseableAV(pa->avatar());
+        break;
+    case 37:
+        ui->widCasi_37->deseableAV(pa->avatar());
+        break;
+    case 38:
+        ui->widCasi_38->deseableAV(pa->avatar());
+        break;
+    case 39:
+        ui->widCasi_39->deseableAV(pa->avatar());
+        break;
+    case 40:
+        ui->widCasi_40->deseableAV(pa->avatar());
+        break;
+    case 41:
+        ui->widCasi_41->deseableAV(pa->avatar());
+        break;
+    case 42:
+        ui->widCasi_42->deseableAV(pa->avatar());
+        break;
+    case 43:
+        ui->widCasi_43->deseableAV(pa->avatar());
+        break;
+    case 44:
+        ui->widCasi_44->deseableAV(pa->avatar());
+        break;
+    case 45:
+        ui->widCasi_45->deseableAV(pa->avatar());
+        break;
+    case 46:
+        ui->widCasi_46->deseableAV(pa->avatar());
+        break;
+    case 47:
+        ui->widCasi_47->deseableAV(pa->avatar());
+        break;
+    case 48:
+        ui->widCasi_48->deseableAV(pa->avatar());
+        break;
+    case 49:
+        ui->widCasi_49->deseableAV(pa->avatar());
+        break;
+    case 50:
+        ui->widCasi_50->deseableAV(pa->avatar());
+        break;
+    case 51:
+        ui->widCasi_51->deseableAV(pa->avatar());
+        break;
+    case 52:
+        ui->widCasi_52->deseableAV(pa->avatar());
+        break;
+    case 53:
+        ui->widCasi_53->deseableAV(pa->avatar());
+        break;
+    case 54:
+        ui->widCasi_54->deseableAV(pa->avatar());
+        break;
+    case 55:
+        ui->widCasi_55->deseableAV(pa->avatar());
+        break;
+    case 56:
+        ui->widCasi_56->deseableAV(pa->avatar());
+        break;
+    case 57:
+        ui->widCasi_57->deseableAV(pa->avatar());
+        break;
+    case 58:
+        ui->widCasi_58->deseableAV(pa->avatar());
+        break;
+    case 59:
+        ui->widCasi_59->deseableAV(pa->avatar());
+        break;
+    case 60:
+        ui->widCasi_60->deseableAV(pa->avatar());
+        break;
+    case 61:
+        ui->widCasi_61->deseableAV(pa->avatar());
+        break;
+    case 62:
+        ui->widCasi_62->deseableAV(pa->avatar());
+        break;
+    case 63:
+        ui->widCasi_63->deseableAV(pa->avatar());
+        break;
+    }
+    delete pa;
 }
 
 void Juego_OCA::cargarPreguntas()
@@ -207,96 +647,94 @@ void Juego_OCA::cargarPreguntas()
     QString path = "Resources/Temas/"+m_tema+".oca";
     // Abre el archivo de preguntas y carga las preguntas necesarias
 
-   QFile preg(path);
-   if (!preg.exists()){
-       //QMessageBox::warning(this,"Error Fatal","No se encuentra el tema");
-       return;
-   }
+    QFile preg(path);
+    if (!preg.exists()){
+        //QMessageBox::warning(this,"Error Fatal","No se encuentra el tema");
+        return;
+    }
 
-   //Se asegura de que la pila este vacía antes de ser llenada
-   preguntas.clear();
-   //Cuento el número de preguntas
-   if(preg.open(QIODevice::ReadOnly | QIODevice::Text)){
-       QTextStream in(&preg);
-       QString all= in.readAll();
-       QStringList linea = all.split("\n");
-       int total = all.count("\n");
-       // Se llena la pila
-       switch (m_level){
-       case 0:
-           if (total >15){
-               for (int j = 0;j<3;j++){
-                   for (int i=0;i<15;i++)
-                   {
-                       preguntas.append(linea[i]);
-                   }
-               }
-           }else {
-               int ap=15-total;
-               ap=ap/total;
-               ap=ap+1;
-               if(((ap*total)-11)>=0){
-                   for (int j = 0;j<ap*4;j++){
-                       for (int i=0;i<total;i++)
-                       {
-                           preguntas.append(linea[i]);
-                       }
-                   }
-               }
+    //Se asegura de que la pila este vacía antes de ser llenada
+    preguntas.clear();
+    //Cuento el número de preguntas
+    if(preg.open(QIODevice::ReadOnly | QIODevice::Text)){
+        QTextStream in(&preg);
+        QString all= in.readAll();
+        QStringList linea = all.split("\n");
+        int total = all.count("\n");
+        // Se llena la pila
+        switch (m_level){
+        case 0:
+            if (total >15){
+                for (int j = 0;j<3;j++){
+                    for (int i=0;i<15;i++)
+                    {
+                        preguntas.append(linea[i]);
+                    }
+                }
+            }else {
+                int ap=15-total;
+                ap=ap/total;
+                ap=ap+1;
+                if(((ap*total)-11)>=0){
+                    for (int j = 0;j<ap*4;j++){
+                        for (int i=0;i<total;i++)
+                        {
+                            preguntas.append(linea[i]);
+                        }
+                    }
+                }
 
-           }
-           break;
-       case 1:
-           if (total >15){
-               for (int j = 0;j<3;j++){
-                   for (int i=0;i<30;i++)
-                   {
-                       preguntas.append(linea[i]);
-                   }
-               }
-           }else {
-               int ap=15-total;
-               ap=ap/total;
-               ap=ap+1;
-               if(((ap*total)-11)>=0){
-                   for (int j = 0;j<ap*4;j++){
-                       for (int i=0;i<total;i++)
-                       {
-                           preguntas.append(linea[i]);
-                       }
-                   }
-               }
+            }
+            break;
+        case 1:
+            if (total >15){
+                for (int j = 0;j<3;j++){
+                    for (int i=0;i<30;i++)
+                    {
+                        preguntas.append(linea[i]);
+                    }
+                }
+            }else {
+                int ap=15-total;
+                ap=ap/total;
+                ap=ap+1;
+                if(((ap*total)-11)>=0){
+                    for (int j = 0;j<ap*4;j++){
+                        for (int i=0;i<total;i++)
+                        {
+                            preguntas.append(linea[i]);
+                        }
+                    }
+                }
 
-           }
-           break;
-       case 2:
-           if (total >15){
-               for (int j = 0;j<3;j++){
-                   for (int i=0;i<45;i++)
-                   {
-                       preguntas.append(linea[i]);
-                   }
-               }
-           }else {
-               int ap=15-total;
-               ap=ap/total;
-               ap=ap+1;
-               if(((ap*total)-11)>=0){
-                   for (int j = 0;j<ap*4;j++){
-                       for (int i=0;i<total;i++)
-                       {
-                           preguntas.append(linea[i]);
-                       }
-                   }
-               }
+            }
+            break;
+        case 2:
+            if (total >15){
+                for (int j = 0;j<3;j++){
+                    for (int i=0;i<45;i++)
+                    {
+                        preguntas.append(linea[i]);
+                    }
+                }
+            }else {
+                int ap=15-total;
+                ap=ap/total;
+                ap=ap+1;
+                if(((ap*total)-11)>=0){
+                    for (int j = 0;j<ap*4;j++){
+                        for (int i=0;i<total;i++)
+                        {
+                            preguntas.append(linea[i]);
+                        }
+                    }
+                }
 
-           }
-           break;
-       }
+            }
+            break;
+        }
 
-
-
-   }
+    }
 
 }
 
