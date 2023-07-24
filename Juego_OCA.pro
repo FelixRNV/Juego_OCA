@@ -19,8 +19,7 @@ SOURCES += \
     newjuego.cpp \
     newtematica.cpp \
     preguntas.cpp \
-    selecjugadores.cpp \
-    tematicas.cpp
+    selecjugadores.cpp
 
 HEADERS += \
     acercade.h \
@@ -32,8 +31,7 @@ HEADERS += \
     newjuego.h \
     newtematica.h \
     preguntas.h \
-    selecjugadores.h \
-    tematicas.h
+    selecjugadores.h
 
 FORMS += \
     acercade.ui \
@@ -43,8 +41,7 @@ FORMS += \
     juego_oca.ui \
     newjuego.ui \
     newtematica.ui \
-    selecjugadores.ui \
-    tematicas.ui
+    selecjugadores.ui
     TRANSLATIONS += \
         Juego_OCA_es_EC.ts \
          Juego_OCA_en_US.ts
