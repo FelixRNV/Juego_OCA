@@ -21,10 +21,10 @@ public:
 
     void setIndi(int newIndi);
 
-    const Jugadores &p1() const;
-    const Jugadores &p2() const;
-    const Jugadores &p3() const;
-    const Jugadores &p4() const;
+    Jugadores &p1();
+    Jugadores &p2();
+    Jugadores &p3();
+    Jugadores &p4();
 
     int indi() const;
 
