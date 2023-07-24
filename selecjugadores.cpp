@@ -138,26 +138,39 @@ void SelecJugadores::validAV_Na()
     int jav2=m_p2.avatar();
     int jav3=m_p3.avatar();
     int jav4=m_p4.avatar();
-    if(jav1==jav2||jav2==jav3||jav3==jav4||jav1==jav3||jav1==jav4||jav2==jav4){
-        QMessageBox::warning(this,"Error","Los jugadores deben tener diferentes avatares");
-        com = true;
-    }else{
-        com = false;
-    }
+
 
     if (m_indi==0){
+        if(jav1==jav2){
+            QMessageBox::warning(this,"Error","Los jugadores deben tener diferentes avatares");
+            com = true;
+        }else{
+            com = false;
+        }
         if (m_p1.name().isEmpty()||m_p2.name().isEmpty()||m_p1.name()==m_p2.name()){
             QMessageBox::warning(this,"Error","Revisar el apodo de los jugadores");
             dop = true;
         }else
             dop = false;
     }else if (m_indi==1){
+        if(jav1==jav2||jav2==jav3||jav1==jav3){
+            QMessageBox::warning(this,"Error","Los jugadores deben tener diferentes avatares");
+            com = true;
+        }else{
+            com = false;
+        }
         if (m_p1.name().isEmpty()||m_p2.name().isEmpty()||m_p3.name().isEmpty()||m_p1.name()==m_p2.name()||m_p1.name()==m_p3.name()||m_p2.name()==m_p3.name()){
             QMessageBox::warning(this,"Error","Revisar el apodo de los jugadores");
             dop = true;
         }else
             dop = false;
     }else if (m_indi==2){
+        if(jav1==jav2||jav2==jav3||jav3==jav4||jav1==jav3||jav1==jav4||jav2==jav4){
+            QMessageBox::warning(this,"Error","Los jugadores deben tener diferentes avatares");
+            com = true;
+        }else{
+            com = false;
+        }
         if (m_p1.name().isEmpty()||m_p2.name().isEmpty()||m_p3.name().isEmpty()||m_p4.name().isEmpty()||m_p1.name()==m_p2.name()||m_p1.name()==m_p3.name()||m_p1.name()==m_p4.name()||m_p2.name()==m_p3.name()||m_p2.name()==m_p4.name()||m_p4.name()==m_p3.name()){
             QMessageBox::warning(this,"Error","Revisar el apodo de los jugadores");
             dop = true;

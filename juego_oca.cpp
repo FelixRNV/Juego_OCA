@@ -29,6 +29,31 @@ void Juego_OCA::on_action_Nuevo_triggered()
         ui->ltxJugador->setText(p1->name());
         ui->ltxNotifi->setText("Lanza el dado");
         ui->btnDado->setEnabled(true);
+        m_juegan=ne.jueg();
+        qDebug() << "Juegan: " << m_juegan;
+    }
+        // Borro posiciones previas
+        ui->widCasi_0->deseableAV(1);
+        ui->widCasi_0->deseableAV(2);
+        ui->widCasi_0->deseableAV(3);
+        ui->widCasi_0->deseableAV(4);
+
+    switch (m_juegan){
+    case 0:
+        ui->widCasi_0->enableAV(p1->avatar()+1);
+        ui->widCasi_0->enableAV(p2->avatar()+1);
+        break;
+    case 1:
+        ui->widCasi_0->enableAV(p1->avatar()+1);
+        ui->widCasi_0->enableAV(p2->avatar()+1);
+        ui->widCasi_0->enableAV(p3->avatar()+1);
+        break;
+    case 2:
+        ui->widCasi_0->enableAV(p1->avatar()+1);
+        ui->widCasi_0->enableAV(p2->avatar()+1);
+        ui->widCasi_0->enableAV(p3->avatar()+1);
+        ui->widCasi_0->enableAV(p4->avatar()+1);
+        break;
     }
 
     cargarPreguntas();
@@ -54,8 +79,11 @@ void Juego_OCA::on_btnDado_released()
     dado = QRandomGenerator::system()->bounded(1,6);
     QMessageBox::information(this, "Dado", "Avanza : "+ QString::number(dado) +" Casilleros");
 
-    if(jug<4)
+    if(jug>m_juegan+2)
         jug=1;
+    setJugador(jug);
+    setCasilleros(jug);
+    qDebug() << "Jugador: " << jug;
     if (jug==1){
         if (!casilleroSpe(dado,jug)){
             QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
@@ -102,6 +130,9 @@ void Juego_OCA::on_btnDado_released()
         }
     }
     jug++;
+    setTimer(2);
+
+
 }
 
 
@@ -147,10 +178,28 @@ void Juego_OCA::on_actionA_cerca_de_triggered()
     ventanaAcercaDe.exec();
 }
 
-
 void Juego_OCA::on_action_Salir_triggered()
 {
     close();
+}
+
+void Juego_OCA::moveSpace(int avan, int jug)
+{
+    switch(avan){
+    case 1:
+        ui->widCasi_1->enableAV(jug);
+        break;
+    case 2:
+        break;
+    case 3:
+        break;
+    case 4:
+        break;
+    case 5:
+        break;
+    case 6:
+        break;
+    }
 }
 
 void Juego_OCA::cargarPreguntas()
@@ -374,6 +423,7 @@ void Juego_OCA::setCasilleros(int jug)
         str.setNum(p4->posicion());
         break;
     }
+    qDebug() << "La posición es:" <<str;
     ui->ltxCasillero->setText(str);
 }
 
@@ -406,3 +456,4 @@ void Juego_OCA::setTimer(int seg)
         llamarlo cuando se quiera crear el retraso en segundos
 */
 }
+

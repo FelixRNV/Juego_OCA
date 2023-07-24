@@ -49,11 +49,13 @@ private:
     QStack<QString> preguntas;
     int m_level;
     int jug=1;
+    int m_juegan;
     Jugadores *p1;
     Jugadores *p2;
     Jugadores *p3;
     Jugadores *p4;
-    int moveSpace(); //Grafica las fichas
+
+    void moveSpace(int avan, int jug); //Grafica las fichas
     QString preguntar(); //Obtiene la pregunta
     void cargarPreguntas(); //Almacena las preguntas en un Stack
     bool casilleroSpe(int avan, int jug); //Analiza los casilleros especiales

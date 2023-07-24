@@ -109,7 +109,18 @@ void NewJuego::on_btn_Seg_released()
         m_p2=new Jugadores(jug.p2());
         m_p3=new Jugadores(jug.p3());
         m_p4=new Jugadores(jug.p4());
+        m_jueg=jug.indi();
         accept();
     }
+}
+
+int NewJuego::jueg() const
+{
+    return m_jueg;
+}
+
+void NewJuego::setJueg(int newJueg)
+{
+    m_jueg = newJueg;
 }
 

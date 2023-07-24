@@ -30,6 +30,9 @@ public:
 
     int level() const;
 
+    int jueg() const;
+    void setJueg(int newJueg);
+
 private slots:
 
     void on_btn_Salir_clicked();
@@ -46,6 +49,7 @@ private:
     SelecJugadores jug;
     QString m_tema;
     int m_level;
+    int m_jueg;
     bool valid;
     const QString BASE = "Resources/BaseIndex.txt";
     Jugadores *m_p1=new Jugadores(jug.p1());
