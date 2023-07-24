@@ -50,12 +50,13 @@ private:
     int m_level;
     int jug=1;
     int m_juegan;
+    int turno;
+    int jug_n;
     Jugadores *p1;
     Jugadores *p2;
     Jugadores *p3;
     Jugadores *p4;
 
-    void moveSpace(int avan, int jug, bool tru); //Grafica las fichas
     void activatedAv(int casil, int jug); //Activa la imagen de una ficha en una casilla
     void disactivatedAv(int casil, int jug); //Desactiva la imagen de una ficha en una casilla
     QString preguntar(); //Obtiene la pregunta
