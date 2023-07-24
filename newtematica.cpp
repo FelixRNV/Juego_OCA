@@ -6,7 +6,8 @@ NewTematica::NewTematica(QWidget *parent)
     , ui(new Ui::NewTematica)
 {
     ui->setupUi(this);
-    setWindowTitle("Formulario de Preguntas");
+    setWindowTitle(tr("Formulario de Preguntas"));
+
 
     //Cargar ComboBox de temas
     QFile ind(BASE);
@@ -18,11 +19,11 @@ NewTematica::NewTematica(QWidget *parent)
         ui->cbx_Temas->addItem(line);
     }
     ind.close();
-    ui->cbx_Temas->addItem("Añadir Tema...");
+    ui->cbx_Temas->addItem(tr("Añadir Tema..."));
     // Configurar la tabla
     ui->tblLista->setColumnCount(2);
     QStringList titulo;
-    titulo << "Pregunta" << "Respuesta";
+    titulo << tr("Pregunta") << tr("Respuesta");
     ui->tblLista->setHorizontalHeaderLabels(titulo);
 
     // Ajustar el ancho de la columna de preguntas
@@ -163,7 +164,8 @@ void NewTematica::on_btn_Guardar_clicked()
 
     QFile nue(selectedFilePath);
     if (!nue.open(QIODevice::WriteOnly)) {
-        QMessageBox::critical(this, "Guardar archivo", "No se puede almacenar la temática");
+        QMessageBox::critical(this, tr("Guardar archivo"), tr("No se puede almacenar la temática"));
+
         return;
     }
 

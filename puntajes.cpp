@@ -11,9 +11,9 @@ Puntajes::Puntajes(QWidget *parent)
     int fila;
     fila = ui->tableClasificacion->rowCount()  -1;
 
-    setWindowTitle("Tabla de Clasificación");
+    setWindowTitle(tr("Tabla de Clasificación"));
     ui->tableClasificacion->setColumnCount(4);//generar columnas
-    titulos<<"Nombre"<<"Puntuacion"<<"Correctas"<<"Incorrectas";
+    titulos << tr("Nombre") << tr("Puntuación") << tr("Correctas") << tr("Incorrectas");
     ui->tableClasificacion->setHorizontalHeaderLabels(titulos);
 
     ui->tableClasificacion->insertRow(ui->tableClasificacion->rowCount());

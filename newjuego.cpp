@@ -12,9 +12,10 @@ NewJuego::NewJuego(QWidget *parent) :
     ui->cbx_jugadores->addItem("2");
     ui->cbx_jugadores->addItem("3");
     ui->cbx_jugadores->addItem("4");
-    ui->cbx_dificultad->addItem("Baja");
-    ui->cbx_dificultad->addItem("Media");
-    ui->cbx_dificultad->addItem("Alta");
+    ui->cbx_dificultad->addItem(tr("Baja"));
+    ui->cbx_dificultad->addItem(tr("Media"));
+    ui->cbx_dificultad->addItem(tr("Alta"));
+
     valid = false;
     //Cargar ComboBox de temas
     QFile ind(BASE);
@@ -27,7 +28,8 @@ NewJuego::NewJuego(QWidget *parent) :
     }
     ind.close();
     if(ui->cbx_tematicas->count()==1){
-        QMessageBox::warning(this,"Error","Añadir Temáticas Primero");
+        QMessageBox::warning(this, tr("Error"), tr("Añadir Temáticas Primero"));
+
         valid=true;
     }
     if (valid==true)

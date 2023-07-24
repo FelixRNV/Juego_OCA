@@ -9,7 +9,7 @@ SelecJugadores::SelecJugadores(QWidget *parent) :
 {
     // Initialize the QLineEdits
     ui->setupUi(this);
-    setWindowTitle("Configurar Partida");
+    setWindowTitle(tr("Configurar Partida"));
 
     // Agregar opciones al QComboBox del jugador 1
     ui->cbx_jugador1->addItem(QIcon(":/fichas/Resources/fichas/ficha_1.png"), "Avatar 1");
@@ -105,28 +105,31 @@ void SelecJugadores::on_btnBox_accepted()
 void SelecJugadores::on_ltx_jugador1_textChanged(const QString &arg1)
 {
     if (arg1.length() > 10) {
-        QMessageBox::critical(this, "Error", "¡Has ingresado más de 10 caracteres!");
+        QMessageBox::critical(this, tr("Error"), tr("¡Has ingresado más de 10 caracteres!"));
     }
 }
 
 void SelecJugadores::on_ltx_jugador2_textChanged(const QString &arg1)
 {
     if (arg1.length() > 10) {
-        QMessageBox::critical(this, "Error", "¡Has ingresado más de 10 caracteres!");
+        QMessageBox::critical(this, tr("Error"), tr("¡Has ingresado más de 10 caracteres!"));
+
     }
 }
 
 void SelecJugadores::on_ltx_jugador3_textChanged(const QString &arg1)
 {
     if (arg1.length() > 10) {
-        QMessageBox::critical(this, "Error", "¡Has ingresado más de 10 caracteres!");
+        QMessageBox::critical(this, tr("Error"), tr("¡Has ingresado más de 10 caracteres!"));
+
     }
 }
 
 void SelecJugadores::on_ltx_jugador4_textChanged(const QString &arg1)
 {
     if (arg1.length() > 10) {
-        QMessageBox::critical(this, "Error", "¡Has ingresado más de 10 caracteres!");
+        QMessageBox::critical(this, tr("Error"), tr("¡Has ingresado más de 10 caracteres!"));
+
     }
 }
 
@@ -142,37 +145,38 @@ void SelecJugadores::validAV_Na()
 
     if (m_indi==0){
         if(jav1==jav2){
-            QMessageBox::warning(this,"Error","Los jugadores deben tener diferentes avatares");
+            QMessageBox::warning(this, tr("Error"), tr("Los jugadores deben tener diferentes avatares"));
+
             com = true;
         }else{
             com = false;
         }
         if (m_p1.name().isEmpty()||m_p2.name().isEmpty()||m_p1.name()==m_p2.name()){
-            QMessageBox::warning(this,"Error","Revisar el apodo de los jugadores");
+            QMessageBox::warning(this, tr("Error"), tr("Revisar el apodo de los jugadores"));
             dop = true;
         }else
             dop = false;
     }else if (m_indi==1){
         if(jav1==jav2||jav2==jav3||jav1==jav3){
-            QMessageBox::warning(this,"Error","Los jugadores deben tener diferentes avatares");
+            QMessageBox::warning(this, tr("Error"), tr("Los jugadores deben tener diferentes avatares"));
             com = true;
         }else{
             com = false;
         }
         if (m_p1.name().isEmpty()||m_p2.name().isEmpty()||m_p3.name().isEmpty()||m_p1.name()==m_p2.name()||m_p1.name()==m_p3.name()||m_p2.name()==m_p3.name()){
-            QMessageBox::warning(this,"Error","Revisar el apodo de los jugadores");
+            QMessageBox::warning(this, tr("Error"), tr("Revisar el apodo de los jugadores"));
             dop = true;
         }else
             dop = false;
     }else if (m_indi==2){
         if(jav1==jav2||jav2==jav3||jav3==jav4||jav1==jav3||jav1==jav4||jav2==jav4){
-            QMessageBox::warning(this,"Error","Los jugadores deben tener diferentes avatares");
+            QMessageBox::warning(this, tr("Error"), tr("Los jugadores deben tener diferentes avatares"));
             com = true;
         }else{
             com = false;
         }
         if (m_p1.name().isEmpty()||m_p2.name().isEmpty()||m_p3.name().isEmpty()||m_p4.name().isEmpty()||m_p1.name()==m_p2.name()||m_p1.name()==m_p3.name()||m_p1.name()==m_p4.name()||m_p2.name()==m_p3.name()||m_p2.name()==m_p4.name()||m_p4.name()==m_p3.name()){
-            QMessageBox::warning(this,"Error","Revisar el apodo de los jugadores");
+            QMessageBox::warning(this, tr("Error"), tr("Revisar el apodo de los jugadores"));
             dop = true;
         }else
             dop = false;

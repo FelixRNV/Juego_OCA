@@ -8,8 +8,9 @@ Agregar::Agregar(QWidget *parent) :
     ui->setupUi(this);
 
     // Agrega las opciones "V" y "F" al ComboBox
-    ui->comboBoxRespuesta->addItem("V");
-    ui->comboBoxRespuesta->addItem("F");
+    ui->comboBoxRespuesta->addItem(tr("V"));
+    ui->comboBoxRespuesta->addItem(tr("F"));
+
 }
 
 Agregar::~Agregar()
@@ -53,7 +54,8 @@ void Agregar::on_buttonBox_2_accepted()
 
     // Verificar si el campo de pregunta está vacío
     if (pregunta.isEmpty()) {
-        QMessageBox::warning(this, "Ingresar pregunta", "Debe ingresar una pregunta antes de continuar");
+        QMessageBox::warning(this, tr("Ingresar pregunta"), tr("Debe ingresar una pregunta antes de continuar"));
+
         return;
     }
 

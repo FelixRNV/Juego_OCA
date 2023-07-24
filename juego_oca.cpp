@@ -27,7 +27,7 @@ void Juego_OCA::on_action_Nuevo_triggered()
         m_level=ne.level();
         m_tema=ne.Tema();
         ui->ltxJugador->setText(p1->name());
-        ui->ltxNotifi->setText("Lanza el dado");
+        ui->ltxNotifi->setText(tr("Lanza el dado"));
         ui->btnDado->setEnabled(true);
         m_juegan=ne.jueg();
         qDebug() << "Juegan: " << m_juegan;
@@ -77,7 +77,7 @@ void Juego_OCA::on_btnDado_released()
     QStringList pregu=preguntas.pop().split(";");
 
     dado = QRandomGenerator::system()->bounded(1,6);
-    QMessageBox::information(this, "Dado", "Avanza : "+ QString::number(dado) +" Casilleros");
+    QMessageBox::information(this, tr("Dado"), tr("Avanza : ")+ QString::number(dado) +tr(" Casilleros"));
 
     if(jug>m_juegan+2)
         jug=1;
@@ -86,7 +86,7 @@ void Juego_OCA::on_btnDado_released()
     qDebug() << "Jugador: " << jug;
     if (jug==1){
         if (!casilleroSpe(dado,jug)){
-            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
+            QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
             if  (respons==QMessageBox::Yes){
                 if(pregu[1]=="V")
                    p1->setPosicion(dado+p1->posicion());
@@ -97,7 +97,7 @@ void Juego_OCA::on_btnDado_released()
         }
     } else if (jug==2){
         if (!casilleroSpe(dado,jug)){
-            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
+               QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
             if  (respons==QMessageBox::Yes){
                 if(pregu[1]=="V")
                    p2->setPosicion(dado+p2->posicion());
@@ -108,7 +108,7 @@ void Juego_OCA::on_btnDado_released()
         }
     } else if (jug==3){
         if (!casilleroSpe(dado,jug)){
-            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
+            QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
             if  (respons==QMessageBox::Yes){
                 if(pregu[1]=="V")
                    p3->setPosicion(dado+p3->posicion());
@@ -119,7 +119,7 @@ void Juego_OCA::on_btnDado_released()
         }
     } else if (jug==4){
         if (!casilleroSpe(dado,jug)){
-            QMessageBox::StandardButton respons = QMessageBox::question(this,"Pregunta",pregu[0]);
+            QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
             if  (respons==QMessageBox::Yes){
                 if(pregu[1]=="V")
                    p4->setPosicion(dado+p4->posicion());
