@@ -6,6 +6,7 @@ Agregar::Agregar(QWidget *parent) :
     ui(new Ui::Agregar)
 {
     ui->setupUi(this);
+    setWindowTitle(tr("Agregar Pregunta"));
 
     // Agrega las opciones "V" y "F" al ComboBox
     ui->comboBoxRespuesta->addItem(tr("V"));

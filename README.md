@@ -43,7 +43,7 @@
 
 
 <p align="center">
-  Enlace al instalador
+  Enlace al instalador: https://drive.google.com/file/d/1JSA3dWis6n7cfL_RVPN6nZi-hdjFiqxT/view?usp=drive_link
 </p>
 
 <h2 align="center">Cómo Jugar 🎮</h2>

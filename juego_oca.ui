@@ -26,8 +26,8 @@
    <string>Juego_OCA</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="null">
-    <normaloff>.</normaloff>.</iconset>
+   <iconset resource="Resource.qrc">
+    <normaloff>:/Resources/logo.png</normaloff>:/Resources/logo.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -63,8 +63,8 @@ border-image: url(:/Resources/tablero partes/Fondo_Princi.png);}</string>
       <rect>
        <x>850</x>
        <y>440</y>
-       <width>341</width>
-       <height>131</height>
+       <width>358</width>
+       <height>166</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -100,7 +100,6 @@ border-image: url(:/Resources/tablero partes/Fondo_Princi.png);}</string>
         <property name="font">
          <font>
           <pointsize>14</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -123,7 +122,6 @@ border-image: url(:/Resources/tablero partes/Fondo_Princi.png);}</string>
         <property name="font">
          <font>
           <pointsize>14</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -800,8 +798,8 @@ border-left-color: rgb(192, 191, 188);</string>
       <rect>
        <x>440</x>
        <y>10</y>
-       <width>345</width>
-       <height>111</height>
+       <width>411</width>
+       <height>120</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -844,7 +842,6 @@ border-left-color: rgb(192, 191, 188);</string>
      <property name="font">
       <font>
        <pointsize>20</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -863,7 +860,7 @@ border-left-color: rgb(192, 191, 188);</string>
      <x>0</x>
      <y>0</y>
      <width>1266</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuJuego">
@@ -914,7 +911,6 @@ border-left-color: rgb(192, 191, 188);</string>
    </property>
    <property name="font">
     <font>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -963,6 +959,8 @@ border-left-color: rgb(192, 191, 188);</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="Resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -6,6 +6,18 @@
         <file>Resources/tablero partes/Fondo_Princi.png</file>
         <file>Resources/Reglamento_juego_OCA.pdf</file>
         <file>Resources/Untitled.png</file>
+        <file>Resources/Sound/avanzar.wav</file>
+        <file>Resources/Sound/carcel.wav</file>
+        <file>Resources/Sound/correctop.wav</file>
+        <file>Resources/Sound/fondo1.wav</file>
+        <file>Resources/Sound/fondo2.wav</file>
+        <file>Resources/Sound/fondo3.wav</file>
+        <file>Resources/Sound/fondo4.wav</file>
+        <file>Resources/Sound/incorrecto.wav</file>
+        <file>Resources/Sound/lab.wav</file>
+        <file>Resources/Sound/pacman.wav</file>
+        <file>Resources/Sound/portal.wav</file>
+        <file>Resources/Sound/saltos.wav</file>
     </qresource>
     <qresource prefix="/fichas">
         <file>Resources/fichas/ficha_1.png</file>

@@ -16,6 +16,8 @@
 #include <QStack>
 #include <QVector>
 #include "QTimer"
+#include <QGraphicsDropShadowEffect>
+#include <QSoundEffect>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Juego_OCA; }
@@ -45,6 +47,7 @@ private slots:
 private:
     Ui::Juego_OCA *ui;
     const QString ARCHIVO = ":/Resources/Reglamento_juego_OCA.pdf";
+    QSoundEffect m_music;
     QString m_tema;
     QStack<QString> preguntas;
     int m_level;

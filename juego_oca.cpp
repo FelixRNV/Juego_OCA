@@ -3,10 +3,15 @@
 
 Juego_OCA::Juego_OCA(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::Juego_OCA)
+    , ui(new Ui::Juego_OCA),m_music(this)
 {
     ui->setupUi(this);
+    setWindowTitle(tr("Juego Oca"));
     ui->btnDado->setEnabled(false);
+    m_music.setSource(QUrl::fromLocalFile(":/Resources/Sound/fondo1.wav"));
+    m_music.setLoopCount(QSoundEffect::Infinite);
+    m_music.setVolume(0.30f);
+    m_music.play();
 
 }
 

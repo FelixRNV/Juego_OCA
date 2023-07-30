@@ -6,6 +6,7 @@ Acercade::Acercade(QWidget *parent) :
     ui(new Ui::Acercade)
 {
     ui->setupUi(this);
+    setWindowTitle(tr("Acerca de"));
 }
 
 Acercade::~Acercade()
