@@ -35,14 +35,11 @@ void Juego_OCA::on_action_Nuevo_triggered()
         m_juegan=ne.jueg();
         qDebug() << "Juegan: " << m_juegan;
     }else {
-        return;
+        //return;
     }
     // Borro posiciones previas
-    //ui->widCasi_0->deseableAV(1);
-    disactivatedAv(0,1);
-    ui->widCasi_0->enableAV(2);
-    disactivatedAv(0,2);
-    //ui->widCasi_0->deseableAV(2);
+    ui->widCasi_0->deseableAV(1);
+    ui->widCasi_0->deseableAV(2);
     ui->widCasi_0->deseableAV(3);
     ui->widCasi_0->deseableAV(4);
 
@@ -695,10 +692,10 @@ void Juego_OCA::on_btnDado_released()
                     }
                 }else {
                     int ap=15-total;
-                    ap=ap/total;
+                    ap=45/ap;
                     ap=ap+1;
                     if(((ap*total)-11)>=0){
-                        for (int j = 0;j<ap*4;j++){
+                        for (int j = 0;j<ap;j++){
                             for (int i=0;i<total;i++)
                             {
                                 preguntas.append(linea[i]);
@@ -718,17 +715,16 @@ void Juego_OCA::on_btnDado_released()
                     }
                 }else {
                     int ap=15-total;
-                    ap=ap/total;
+                    ap=45/ap;
                     ap=ap+1;
                     if(((ap*total)-11)>=0){
-                        for (int j = 0;j<ap*4;j++){
+                        for (int j = 0;j<ap;j++){
                             for (int i=0;i<total;i++)
                             {
                                 preguntas.append(linea[i]);
                             }
                         }
                     }
-
                 }
                 break;
             case 2:
@@ -741,10 +737,10 @@ void Juego_OCA::on_btnDado_released()
                     }
                 }else {
                     int ap=15-total;
-                    ap=ap/total;
+                    ap=45/ap;
                     ap=ap+1;
                     if(((ap*total)-11)>=0){
-                        for (int j = 0;j<ap*4;j++){
+                        for (int j = 0;j<ap;j++){
                             for (int i=0;i<total;i++)
                             {
                                 preguntas.append(linea[i]);
