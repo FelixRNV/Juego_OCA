@@ -70,5 +70,6 @@ private:
     void setJugador(int jug); //Muestra el jugador que toca en pantalla
     void setCasilleros(int jug); //Muestra la posición del jugador
     void setTimer(int seg); //Crea una espera de "seg" segundos
+    void setDado(int val); //Muestra el valor del dado
 };
 #endif // JUEGO_OCA_H

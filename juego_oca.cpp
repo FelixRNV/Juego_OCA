@@ -31,15 +31,18 @@ void Juego_OCA::on_action_Nuevo_triggered()
         m_level=ne.level();
         m_tema=ne.Tema();
         ui->ltxJugador->setText(p1->name());
-        ui->ltxNotifi->setText(tr("Lanza el dado"));
         ui->btnDado->setEnabled(true);
         m_juegan=ne.jueg();
         qDebug() << "Juegan: " << m_juegan;
+    }else {
+        return;
     }
     // Borro posiciones previas
     //ui->widCasi_0->deseableAV(1);
     disactivatedAv(0,1);
-    ui->widCasi_0->deseableAV(2);
+    ui->widCasi_0->enableAV(2);
+    disactivatedAv(0,2);
+    //ui->widCasi_0->deseableAV(2);
     ui->widCasi_0->deseableAV(3);
     ui->widCasi_0->deseableAV(4);
 
@@ -83,15 +86,12 @@ void Juego_OCA::on_btnDado_released()
     QStringList pregu=preguntas.pop().split(";");
 
     dado = QRandomGenerator::system()->bounded(1,6);
-    QMessageBox::information(this, tr("Dado"), tr("Avanza : ")+ QString::number(dado) +tr(" Casilleros"));
+    setDado(dado);
     if (gana==1||gana==2||gana==3||gana==4){
         ui->ltxNotifi->setText(gnj);
         return;
     }
-    if(jug>m_juegan+2)
-        jug=1;
-    setJugador(jug);
-    setCasilleros(jug);
+
     qDebug() << "Jugador: " << jug;
     if (jug==1){
         if (!p1->lost()){
@@ -102,6 +102,7 @@ void Juego_OCA::on_btnDado_released()
 
                         if(pregu[1]=="V"){
                             qDebug() << "Posicion: " << p1->posicion();
+                             QMessageBox::information(this, tr("Respuesta"), tr("Correcto!!!"));
                             disactivatedAv(p1->posicion(),1);
                             p1->setPosicion(dado+p1->posicion());
                             activatedAv(p1->posicion(),1);
@@ -177,9 +178,11 @@ void Juego_OCA::on_btnDado_released()
         }
 
         jug++;
+        if(jug>m_juegan+2)
+            jug=1;
         setTimer(2);
-
-
+        setJugador(jug);
+        setCasilleros(jug);
     }
 
 
@@ -466,6 +469,7 @@ void Juego_OCA::on_btnDado_released()
         switch (casil){
         case 0:
             ui->widCasi_0->deseableAV(pa->avatar());
+            qDebug() << "Se eliminó en la casilla 0 al avatar" << pa->avatar();
             break;
         case 1:
             ui->widCasi_1->deseableAV(pa->avatar());
@@ -948,5 +952,29 @@ void Juego_OCA::on_btnDado_released()
         setTimer(0.35);
         llamarlo cuando se quiera crear el retraso en segundos
 */
+    }
+
+    void Juego_OCA::setDado(int val)
+    {
+        switch (val) {
+        case 1:
+            ui->ltxNotifi->setStyleSheet("border-image: url(:/Resources/tablero partes/dado_1.png);");
+            break;
+        case 2:
+            ui->ltxNotifi->setStyleSheet("border-image: url(:/Resources/tablero partes/dado_2.png);");
+            break;
+        case 3:
+            ui->ltxNotifi->setStyleSheet("border-image: url(:/Resources/tablero partes/dado_3.png);");
+            break;
+        case 4:
+            ui->ltxNotifi->setStyleSheet("border-image: url(:/Resources/tablero partes/dado_4.png);");
+            break;
+        case 5:
+            ui->ltxNotifi->setStyleSheet("border-image: url(:/Resources/tablero partes/dado_5.png);");
+            break;
+        case 6:
+            ui->ltxNotifi->setStyleSheet("border-image: url(:/Resources/tablero partes/dado_6.png);");
+            break;
+        }
     }
 

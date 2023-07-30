@@ -18,6 +18,12 @@
         <file>Resources/Sound/pacman.wav</file>
         <file>Resources/Sound/portal.wav</file>
         <file>Resources/Sound/saltos.wav</file>
+        <file>Resources/tablero partes/dado_1.png</file>
+        <file>Resources/tablero partes/dado_2.png</file>
+        <file>Resources/tablero partes/dado_3.png</file>
+        <file>Resources/tablero partes/dado_4.png</file>
+        <file>Resources/tablero partes/dado_5.png</file>
+        <file>Resources/tablero partes/dado_6.png</file>
     </qresource>
     <qresource prefix="/fichas">
         <file>Resources/fichas/ficha_1.png</file>
