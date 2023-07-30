@@ -25,10 +25,6 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="Resource.qrc">
-    <normaloff>:/Resources/logo.png</normaloff>:/Resources/logo.png</iconset>
-  </property>
   <property name="styleSheet">
    <string notr="true"/>
   </property>

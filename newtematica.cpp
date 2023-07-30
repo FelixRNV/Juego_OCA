@@ -7,6 +7,8 @@ NewTematica::NewTematica(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowTitle(tr("Formulario de Preguntas"));
+
+
     //Cargar ComboBox de temas
     QFile ind(BASE);
     if(!ind.open(QIODevice::ReadOnly | QIODevice::Text))

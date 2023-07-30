@@ -9,7 +9,6 @@ NewJuego::NewJuego(QWidget *parent) :
     ui(new Ui::NewJuego)
 {
     ui->setupUi(this);
-    setWindowTitle(tr("New Juego"));
     ui->cbx_jugadores->addItem("2");
     ui->cbx_jugadores->addItem("3");
     ui->cbx_jugadores->addItem("4");
