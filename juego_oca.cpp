@@ -37,7 +37,7 @@ void Juego_OCA::on_action_Nuevo_triggered()
         qDebug() << "Juegan: " << m_juegan;
     }
     // Borro posiciones previas
-    ui->widCasi_0->deseableAV(1);
+    //ui->widCasi_0->deseableAV(1);
     disactivatedAv(0,1);
     ui->widCasi_0->deseableAV(2);
     ui->widCasi_0->deseableAV(3);

@@ -113,6 +113,8 @@ void NewJuego::on_btn_Seg_released()
         m_p4=new Jugadores(jug.p4());
         m_jueg=jug.indi();
         accept();
+    }else {
+    reject();
     }
 }
 
