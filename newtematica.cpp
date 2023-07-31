@@ -43,7 +43,7 @@ NewTematica::~NewTematica()
 void NewTematica::cargarPreguntas()
 {
     // Verificar si el archivo existe
-    QString filePath="Resources/Temas" + path;
+    QString filePath=QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources/Temas" + path;
 
     // Verificar si el archivo existe
     QFile archivo(filePath);
@@ -151,7 +151,7 @@ void NewTematica::on_btn_Guardar_clicked()
 
 
     // Obtener la ruta de la carpeta de la aplicación
-    QString folderPath =  "Resources/Temas";
+    QString folderPath =  QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources/Temas";
 
     // Combinar la ruta de la carpeta y el nombre del archivo
     QString selectedFilePath = folderPath + "/" + binFilePath;

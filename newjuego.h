@@ -8,6 +8,7 @@
 #include "QDebug"
 #include "QFile"
 #include "QMessageBox"
+#include "QStandardPaths"
 
 namespace Ui {
 class NewJuego;
@@ -51,7 +52,7 @@ private:
     int m_level;
     int m_jueg;
     bool valid;
-    const QString BASE = "Resources/BaseIndex.txt";
+    const QString BASE = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources/BaseIndex.txt";
     Jugadores *m_p1=new Jugadores(jug.p1());
     Jugadores *m_p2=new Jugadores(jug.p2());
     Jugadores *m_p3=new Jugadores(jug.p3());

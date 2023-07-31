@@ -11,6 +11,7 @@ Juego_OCA::Juego_OCA(QWidget *parent)
     m_music.setLoopCount(QSoundEffect::Infinite);
     m_music.setVolume(0.30f);
     m_music.play();
+    cargarDatos();
 
 }
 
@@ -691,12 +692,12 @@ void Juego_OCA::on_btnDado_released()
 
     void Juego_OCA::cargarPreguntas()
     {
-        QString path = "Resources/Temas/"+m_tema+".oca";
+        QString path = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources/Temas/"+m_tema+".oca";
         // Abre el archivo de preguntas y carga las preguntas necesarias
 
         QFile preg(path);
         if (!preg.exists()){
-            //QMessageBox::warning(this,"Error Fatal","No se encuentra el tema");
+            QMessageBox::warning(this,"Error Fatal","No se encuentra el tema");
             return;
         }
 
@@ -1001,4 +1002,68 @@ void Juego_OCA::on_btnDado_released()
             break;
         }
     }
+
+    void Juego_OCA::cargarDatos()
+    {
+        //Se crea el nuevo índice del programa
+        QStringList temas;
+        QString desti = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources";
+        QString destin=desti+"/BaseIndex.txt";
+        QDir crea;
+        if (!crea.exists(desti)){
+            crea.mkpath(desti);
+        }
+
+        QFile newbase(destin);
+        if(!newbase.open(QIODevice::WriteOnly))
+            return;
+
+        QTextStream out(&newbase);
+
+        QFile ind(BASE);
+        if(!ind.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+        QTextStream indix(&ind);
+        while (!indix.atEnd()) {
+            QString line = indix.readLine();
+            temas.append(line);
+            QString sl=line+"\n";
+            out << sl;
+        }
+        ind.close();
+        newbase.close();
+        QString bass="Resources/Temas";
+        for (int i=1;i<temas.size();i++){
+            copiar(desti+"/Temas",bass,temas[i]);
+        }
+
+    }
+
+    void Juego_OCA::copiar(QString destino, QString desde, QString name)
+    {
+        QDir crea;
+        if (!crea.exists(destino)){
+            crea.mkpath(destino);
+        }
+        QString destin=destino+"/"+name+".oca";
+        QFile newbase(destin);
+        if(!newbase.open(QIODevice::WriteOnly))
+            return;
+
+        QTextStream out(&newbase);
+        QString bas=desde+"/"+name+".oca";
+        QFile ind(bas);
+        if(!ind.open(QIODevice::ReadOnly | QIODevice::Text))
+            return;
+        QTextStream indix(&ind);
+        while (!indix.atEnd()) {
+            QString line = indix.readLine() + "\n";
+
+            out << line;
+        }
+
+        ind.close();
+        newbase.close();
+    }
+
 

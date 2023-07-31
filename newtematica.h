@@ -11,6 +11,7 @@
 #include <QDir>
 #include <QFile>
 #include "QDebug"
+#include "QStandardPaths"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class NewTematica; }
@@ -48,7 +49,7 @@ private slots:
 private:
     Ui::NewTematica *ui;
     QString path;
-    const QString BASE = "Resources/BaseIndex.txt";
+    const QString BASE = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources/BaseIndex.txt";
     const QString ARCHIVO = ":/TMatematicas.txt";
     enum Columna
     {

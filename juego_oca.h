@@ -18,6 +18,8 @@
 #include "QTimer"
 #include <QGraphicsDropShadowEffect>
 #include <QSoundEffect>
+#include <QStandardPaths>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Juego_OCA; }
@@ -46,7 +48,9 @@ private slots:
 
 private:
     Ui::Juego_OCA *ui;
+    const QString DESTI = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources";
     const QString ARCHIVO = ":/Resources/Reglamento_juego_OCA.pdf";
+    const QString BASE = "Resources/BaseIndex.txt";
     QSoundEffect m_music;
     QString m_tema;
     QStack<QString> preguntas;
@@ -71,5 +75,7 @@ private:
     void setCasilleros(int jug); //Muestra la posición del jugador
     void setTimer(int seg); //Crea una espera de "seg" segundos
     void setDado(int val); //Muestra el valor del dado
+    void cargarDatos(); //Crea una carpeta en Documentos para manejar los temas e indices
+    void copiar(QString destino, QString desde, QString name); //Crea una copia de un archivo de un path a otro
 };
 #endif // JUEGO_OCA_H
