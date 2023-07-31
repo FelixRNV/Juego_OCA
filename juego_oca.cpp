@@ -99,7 +99,8 @@ void Juego_OCA::on_btnDado_released()
 
                         if(pregu[1]=="V"){
                             qDebug() << "Posicion: " << p1->posicion();
-                             QMessageBox::information(this, tr("Respuesta"), tr("Correcto!!!"));
+                            ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/checked.png);");
+                            ui->ltx_resp->setText("Respuesta Correcta");
                             disactivatedAv(p1->posicion(),1);
                             p1->setPosicion(dado+p1->posicion());
                             activatedAv(p1->posicion(),1);
@@ -107,12 +108,16 @@ void Juego_OCA::on_btnDado_released()
                     } else {
                         if(pregu[1]=="F"){
                             qDebug() << "Falso";
+                            ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/checked.png);");
+                            ui->ltx_resp->setText("Respuesta Correcta");
                             disactivatedAv(p1->posicion(),1);
                             p1->setPosicion(dado+p1->posicion());
                             activatedAv(p1->posicion(),1);
                         }
                     }
                 } else{
+                    ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/cancel.png);");
+                    ui->ltx_resp->setText("Respuesta Incorrecta");
                     jug=jug_n-1;}
 
             }else {
@@ -126,58 +131,81 @@ void Juego_OCA::on_btnDado_released()
                 QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
                 if  (respons==QMessageBox::Yes){
                     if(pregu[1]=="V"){
+                        ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/checked.png);");
+                        ui->ltx_resp->setText("Respuesta Correcta");
                         disactivatedAv(p2->posicion(),2);
                         p2->setPosicion(dado+p2->posicion());
                         activatedAv(p2->posicion(),2);
                     }} else {
                     if(pregu[1]=="F"){
+                        ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/checked.png);");
+                        ui->ltx_resp->setText("Respuesta Correcta");
                         disactivatedAv(p2->posicion(),2);
                         p2->setPosicion(dado+p2->posicion());
                         activatedAv(p2->posicion(),2);
                     }
                 }
-            } else
+            } else{
+                ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/cancel.png);");
+                ui->ltx_resp->setText("Respuesta Incorrecta");
                 jug=jug_n-1;
+            }
         } else if (jug==3){
             if (!casilleroSpe(dado,jug)){
                 QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
                 if  (respons==QMessageBox::Yes){
                     if(pregu[1]=="V"){
+                        ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/checked.png);");
+                        ui->ltx_resp->setText("Respuesta Correcta");
                         disactivatedAv(p3->posicion(),3);
                         p3->setPosicion(dado+p3->posicion());
                         activatedAv(p3->posicion(),3);
                     }} else {
                     if(pregu[1]=="F"){
+                        ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/checked.png);");
+                        ui->ltx_resp->setText("Respuesta Correcta");
                         disactivatedAv(p3->posicion(),3);
                         p3->setPosicion(dado+p3->posicion());
                         activatedAv(p3->posicion(),3);
                     }
                 }
-            } else
+            } else{
+                ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/cancel.png);");
+                ui->ltx_resp->setText("Respuesta Incorrecta");
                 jug=jug_n-1;
+            }
         } else if (jug==4){
             if (!casilleroSpe(dado,jug)){
                 QMessageBox::StandardButton respons = QMessageBox::question(this,tr("Pregunta"),pregu[0]);
                 if  (respons==QMessageBox::Yes){
                     if(pregu[1]=="V"){
+                        ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/checked.png);");
+                        ui->ltx_resp->setText("Respuesta Correcta");
                         disactivatedAv(p4->posicion(),4);
                         p4->setPosicion(dado+p4->posicion());
                         activatedAv(p4->posicion(),4);
                     }} else {
                     if(pregu[1]=="F"){
+                        ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/checked.png);");
+                        ui->ltx_resp->setText("Respuesta Correcta");
                         disactivatedAv(p4->posicion(),4);
                         p4->setPosicion(dado+p4->posicion());
                         activatedAv(p4->posicion(),4);
                     }
                 }
-            } else
+            } else{
+                ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/cancel.png);");
+                ui->ltx_resp->setText("Respuesta Incorrecta");
                 jug=jug_n-1;
+            }
         }
 
         jug++;
         if(jug>m_juegan+2)
             jug=1;
         setTimer(2);
+        //ui->ltx_ICON->setStyleSheet("border-image: url(:/Resources/Untitled.png);");
+        //ui->ltx_resp->setText("");
         setJugador(jug);
         setCasilleros(jug);
     }

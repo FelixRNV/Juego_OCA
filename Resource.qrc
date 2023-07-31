@@ -24,6 +24,8 @@
         <file>Resources/tablero partes/dado_4.png</file>
         <file>Resources/tablero partes/dado_5.png</file>
         <file>Resources/tablero partes/dado_6.png</file>
+        <file>Resources/cancel.png</file>
+        <file>Resources/checked.png</file>
     </qresource>
     <qresource prefix="/fichas">
         <file>Resources/fichas/ficha_1.png</file>

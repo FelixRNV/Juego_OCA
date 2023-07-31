@@ -36,8 +36,8 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>10</x>
+      <y>10</y>
       <width>1247</width>
       <height>901</height>
      </rect>
@@ -520,16 +520,33 @@ border-image: url(:/Resources/tablero partes/Fondo_Princi.png);}</string>
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>860</x>
-       <y>350</y>
+       <y>270</y>
        <width>371</width>
-       <height>381</height>
+       <height>491</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3" stretch="20,20">
+     <layout class="QVBoxLayout" name="verticalLayout_3" stretch="30,0,20,30">
+      <item>
+       <widget class="QLabel" name="ltx_ICON">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="ltx_resp">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
       <item>
        <layout class="QFormLayout" name="formLayout">
         <item row="0" column="0">
