@@ -26,8 +26,8 @@
    <string>Juego_OCA</string>
   </property>
   <property name="windowIcon">
-   <iconset theme="null">
-    <normaloff>.</normaloff>.</iconset>
+   <iconset resource="Resource.qrc">
+    <normaloff>:/Resources/logo.png</normaloff>:/Resources/logo.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -36,16 +36,16 @@
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>0</x>
+      <y>-50</y>
       <width>1247</width>
-      <height>901</height>
+      <height>831</height>
      </rect>
     </property>
     <property name="minimumSize">
      <size>
-      <width>1247</width>
-      <height>901</height>
+      <width>0</width>
+      <height>0</height>
      </size>
     </property>
     <property name="maximumSize">
@@ -61,47 +61,10 @@ border-image: url(:/Resources/tablero partes/Fondo_Princi.png);}</string>
     <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>440</x>
-       <y>10</y>
-       <width>345</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="font">
-         <font>
-          <pointsize>50</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Juego OCA</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="verticalSpacer">
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>20</width>
-          <height>40</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
        <x>100</x>
-       <y>130</y>
+       <y>120</y>
        <width>691</width>
-       <height>691</height>
+       <height>651</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout" rowstretch="12,12,12,12,12,12,12,12,12">
@@ -652,6 +615,24 @@ border-left-color: rgb(192, 191, 188);</string>
       </item>
      </layout>
     </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>820</x>
+       <y>80</y>
+       <width>409</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>50</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Juego OCA</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -660,7 +641,7 @@ border-left-color: rgb(192, 191, 188);</string>
      <x>0</x>
      <y>0</y>
      <width>1266</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuJuego">
@@ -759,6 +740,8 @@ border-left-color: rgb(192, 191, 188);</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="Resource.qrc"/>
+ </resources>
  <connections/>
 </ui>

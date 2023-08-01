@@ -2,7 +2,6 @@
 #include "ui_newjuego.h"
 #include "selecjugadores.h"
 #include "QComboBox"
-#include "ui_selecjugadores.h"
 #include "QTranslator"
 NewJuego::NewJuego(QWidget *parent) :
     QDialog(parent),
@@ -73,16 +72,6 @@ Jugadores *NewJuego::p4() const
 }
 
 
-void NewJuego::on_cbx_tematicas_currentIndexChanged(const QString &arg1)
-{
-    if (arg1=="<Seleccionar>"){
-        valid=true;
-        return;
-    }
-    valid=false;
-    m_tema=arg1;
-}
-
 int NewJuego::level() const
 {
     return m_level;
@@ -126,5 +115,18 @@ int NewJuego::jueg() const
 void NewJuego::setJueg(int newJueg)
 {
     m_jueg = newJueg;
+}
+
+
+void NewJuego::on_cbx_tematicas_currentTextChanged(const QString &arg1)
+{
+    qDebug() <<arg1;
+    if (arg1=="<Seleccionar>"){
+    valid=true;
+    return;
+    }
+    valid=false;
+    m_tema=arg1;
+    qDebug() <<m_tema;
 }
 

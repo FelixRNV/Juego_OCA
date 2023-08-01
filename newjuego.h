@@ -39,11 +39,11 @@ private slots:
     void on_btn_Salir_clicked();
     void on_cbx_jugadores_currentIndexChanged(int index);
 
-    void on_cbx_tematicas_currentIndexChanged(const QString &arg1);
-
     void on_cbx_dificultad_currentIndexChanged(int index);
 
     void on_btn_Seg_released();
+
+    void on_cbx_tematicas_currentTextChanged(const QString &arg1);
 
 private:
     Ui::NewJuego *ui;

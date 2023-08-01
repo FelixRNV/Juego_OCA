@@ -694,10 +694,10 @@ void Juego_OCA::on_btnDado_released()
     {
         QString path = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources/Temas/"+m_tema+".oca";
         // Abre el archivo de preguntas y carga las preguntas necesarias
-
+        qDebug() << path;
         QFile preg(path);
         if (!preg.exists()){
-            QMessageBox::warning(this,"Error Fatal","No se encuentra el tema");
+            QMessageBox::warning(this,"Error","No se encuentra el tema");
             return;
         }
 
@@ -1009,10 +1009,14 @@ void Juego_OCA::on_btnDado_released()
         QStringList temas;
         QString desti = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation)+"/OCASources";
         QString destin=desti+"/BaseIndex.txt";
+
         QDir crea;
         if (!crea.exists(desti)){
             crea.mkpath(desti);
         }
+        QFile file(destin);
+         if (file.exists())
+           return;
 
         QFile newbase(destin);
         if(!newbase.open(QIODevice::WriteOnly))
