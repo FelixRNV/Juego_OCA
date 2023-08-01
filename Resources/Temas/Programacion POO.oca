@@ -1,0 +1,45 @@
+¿La POO se basa en la creacion y manipulacion de objetos?; V
+¿La herencia es un concepto fundamental de la POO?; V
+¿El polimorfismo permite que un objeto se comporte de diferentes formas?; V
+¿La abstraccion es un concepto clave en la POO?; V
+¿La encapsulacion permite ocultar los detalles internos de un objeto?; V
+¿La clase es una plantilla para crear objetos en la POO?; V
+¿Un objeto es una instancia especiÂ¬fica de una clase?; V
+¿Los atributos en POO almacenan datos asociados a un objeto o clase?; V
+¿Los metodos en POO definen el comportamiento de un objeto o clase?; V
+¿El constructor es un metodo especial para inicializar objetos?; V
+¿La herencia permite crear una nueva clase basada en una clase existente?; V
+Â¿La sobrecarga de metodos en POO permite tener varios metodos con el mismo nombre y diferentes parametros?; V
+¿El polimorfismo estetico se logra a traves de la sobrecarga de metodos?; V
+¿El polimorfismo dinamico se logra a traves de la herencia y redefinicion de metodos en clases derivadas?; V
+¿El principio de encapsulamiento en POO es importante para proteger los datos y controlar el acceso?; V
+¿El principio de herencia permite reutilizar el codigo y establecer jerarquias de clases?; V
+¿La cohesion en POO se refiere a la relacion entre metodos y atributos de una clase?; V
+¿El acoplamiento en POO se refiere a la dependencia entre clases?; V
+¿La clase base es aquella de la cual se heredan atributos y metodos?; V
+¿El polimorfismo de inclusion permite tratar un objeto de una clase derivada como un objeto de la clase base?; V
+¿El principio de responsabilidad unica establece que una clase debe tener una sola razon para cambiar?; V
+¿El principio de abierto/cerrado establece que una clase debe estar abierta para su extension pero cerrada para su modificacion?; V
+¿El principio de sustitucion de Liskov establece que los objetos de una clase base deben ser reemplazables por objetos de sus clases derivadas?; V
+¿El polimorfismo en POO permite trabajar con objetos de diferentes clases a traves de una interfaz comun?; V
+¿El principio de inversion de dependencia establece que los modulos de alto nivel no deben depender de los de bajo nivel, sino de abstracciones?; V
+¿El principio de sustitucion de Barabasi establece que una clase derivada debe ser capaz de cumplir todas las expectativas de comportamiento de su clase base?; V
+¿El principio de segregacion de interfaces establece que las interfaces de una clase deben ser cohesivas y sin dependencias innecesarias?; V
+¿El patron de diseÃ±o Singleton garantiza la existencia de una unica instancia de una clase?; V
+¿El patron de diseÃ±o Factory Metodo delega la creacion de objetos a clases derivadas?; V
+¿El patron de deseo Observar establece una relacion de uno a muchos entre objetos?; V
+¿La POO se basa en la creacion y manipulacion de objetos?; F
+¿La herencia es un concepto fundamental de la POO?; F
+¿El polimorfismo permite que un objeto se comporte de diferentes formas?; F
+¿La abstraccion es un concepto clave en la POO?; F
+¿La encapsulacion permite ocultar detalles internos de un objeto?; F
+¿La clase es una plantilla para crear objetos en la POO?; F
+¿Un objeto es una instancia especifica de una clase?; F
+¿Los atributos en POO almacenan datos asociados a un objeto o clase?; F
+¿Los metodos en POO definen el comportamiento de un objeto o clase?; F
+¿El constructor es un metodo especial para inicializar objetos?; F
+¿La herencia permite crear una nueva clase basada en una clase existente?; F
+¿La sobrecarga de metodos en POO permite tener varios metodos con el mismo nombre, pero diferentes parametros?; F
+¿El polimorfismo estetico se logra a traves de la sobrecarga de metodos?; F
+¿El polimorfismo dinamico se logra a traves de la herencia y redefinicion de metodos en clases derivadas?; F
+¿El principio de encapsulamiento en POO es importante para proteger los datos y controlar el acceso?; F
